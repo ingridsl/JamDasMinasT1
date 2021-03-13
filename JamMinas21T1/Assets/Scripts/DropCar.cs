@@ -19,29 +19,14 @@ public class DropCar : MonoBehaviour
     }
 
     void OnTriggerStay2D(Collider2D other)
-    {   Debug.Log("iiiii");
-        if (other.tag == "car")
+    {   
+        if (other.tag == "Player")
         {   
             if (Input.GetMouseButtonDown(0))
-            {   Debug.Log("foi");
+            {   
                 InventoryManager.RemoveObject();
-               //OpenCloseCar();
+                
             }
         }
     }
-
-    /*public void OpenCloseCar()
-    {
-        var child = this.transform.GetChild(0);
-        if (child.gameObject.activeSelf)
-        {
-            child.gameObject.SetActive(false);
-            //Time.timeScale = 1;
-        }
-        else
-        {
-            child.gameObject.SetActive(true);
-            //Time.timeScale = 0;
-        }
-    }*/
 }
