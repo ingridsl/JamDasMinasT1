@@ -62,6 +62,74 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    public void RemoveObject()
+    {
+        //PROVISORIO: por enquanto, retirar na ordem q colocou. depois, poder retirar qualquer um
+        var canvas = transform.GetChild(0);
+        var panel = canvas.GetChild(0);
+        foreach (Transform child in panel.transform)
+        {
+            switch (inventoryAmout)
+            {
+                case 0:
+                    //Não entra nesse caso
+                    break;
+                case 1:
+                    if (child.gameObject.name == "Obj1")
+                    {
+                        inventoryAmout--;
+                        child.gameObject.GetComponent<Image>().sprite = null;
+                    }
+                    break;
+                case 2:
+                    if (child.gameObject.name == "Obj1")
+                    {
+                        inventoryAmout--;
+                        child.gameObject.GetComponent<Image>().sprite = obj2;
+                    }
+                    if (child.gameObject.name == "Obj2")
+                    {
+                        child.gameObject.GetComponent<Image>().sprite = null;
+                    }
+                    break;
+                case 3:
+                    if (child.gameObject.name == "Obj1")
+                    {
+                        inventoryAmout--;
+                        child.gameObject.GetComponent<Image>().sprite = obj2;
+                    }
+                    if (child.gameObject.name == "Obj2")
+                    {
+                        child.gameObject.GetComponent<Image>().sprite = obj3;
+                    }
+                    if (child.gameObject.name == "Obj3")
+                    {
+                        child.gameObject.GetComponent<Image>().sprite = null;
+                    }
+                    break;
+                case 4:
+                    if (child.gameObject.name == "Obj1")
+                    {
+                        inventoryAmout--;
+                        child.gameObject.GetComponent<Image>().sprite = obj2;
+                    }
+                    if (child.gameObject.name == "Obj2")
+                    {
+                        child.gameObject.GetComponent<Image>().sprite = obj3;
+                    }
+                    if (child.gameObject.name == "Obj3")
+                    {
+                        child.gameObject.GetComponent<Image>().sprite = obj4;
+                    }
+                    if (child.gameObject.name == "Obj4")
+                    {
+                        child.gameObject.GetComponent<Image>().sprite = null;
+                    }
+                    break;
+            }
+        }
+    }
+
     public void ReceiveObject(Sprite newObj)
     {
         switch (inventoryAmout)
