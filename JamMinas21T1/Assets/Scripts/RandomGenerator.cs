@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class RandomGenerator : MonoBehaviour
 {
-    float limitX = 2.5f;
-    float limitY = 5.5f;
+    public float limitX = 2.5f;
+    public float limitY = 5.5f;
 
     public GameObject stone;
 
