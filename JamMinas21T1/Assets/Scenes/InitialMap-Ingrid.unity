@@ -208,9 +208,10 @@ GameObject:
   m_Component:
   - component: {fileID: 59255539}
   - component: {fileID: 59255540}
+  - component: {fileID: 59255541}
   m_Layer: 5
   m_Name: RandomAreaRight
-  m_TagString: Untagged
+  m_TagString: RandomGenerator
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -242,6 +243,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 59255538}
   m_CullTransparentMesh: 1
+--- !u!114 &59255541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59255538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69aa97dbb5dd8e14aa30600f0116b55d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stone: {fileID: 921724150523646488, guid: d6a949ec116d3874ca6b5378e487fed1, type: 3}
 --- !u!1 &158389729
 GameObject:
   m_ObjectHideFlags: 0
@@ -4111,7 +4125,7 @@ GameObject:
   - component: {fileID: 2037291339}
   m_Layer: 5
   m_Name: RandomAreaLeft
-  m_TagString: Untagged
+  m_TagString: RandomGenerator
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

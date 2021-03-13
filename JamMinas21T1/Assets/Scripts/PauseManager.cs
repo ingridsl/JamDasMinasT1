@@ -18,7 +18,7 @@ public class PauseManager : MonoBehaviour
     {
         if (game.wasdMovement != (movementSlider.value == 0))
         {
-            game.changeMovementButton(movementSlider.value == 0);
+            game.ChangeMovementButton(movementSlider.value == 0);
         }
 
         if (Input.GetKeyDown(KeyCode.P))

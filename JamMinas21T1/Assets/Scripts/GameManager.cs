@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void changeMovementButton(bool isWASD)
+    public void ChangeMovementButton(bool isWASD)
     {        
         if (wasdMovement != isWASD)
         {
