@@ -11,20 +11,36 @@ public class GameManager : MonoBehaviour
     public KeyCode up = KeyCode.W;
     public KeyCode down = KeyCode.S;
 
+    public GameObject[] randomGenerators;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        randomGenerators = GameObject.FindGameObjectsWithTag("RandomGenerator");
+        RestartStones(Constants.BASIC_RANDOM_STONES);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
+    public void RestartStones(int quantity)
+    {
+        foreach (var randomGenerator in randomGenerators)
+        {
+            foreach (Transform child in randomGenerator.transform)
+            {
+                Destroy(child.gameObject);
+            }
+            randomGenerator.GetComponent<RandomGenerator>().GenerateStones(quantity);
+        }
+    }
+
+
     public void ChangeMovementButton(bool isWASD)
-    {        
+    {
         if (wasdMovement != isWASD)
         {
             if (isWASD)

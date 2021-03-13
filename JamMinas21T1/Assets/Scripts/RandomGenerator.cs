@@ -13,7 +13,7 @@ public class RandomGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GenerateStones(20); //PROVISORIO : APENAS PARA TESTAR
+    
     }
 
     // Update is called once per frame

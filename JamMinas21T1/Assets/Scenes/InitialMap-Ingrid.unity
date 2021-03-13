@@ -2666,8 +2666,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 412.82214, y: 151.53606}
-  m_SizeDelta: {x: 818, y: 322}
+  m_AnchoredPosition: {x: 448.17456, y: 151.53606}
+  m_SizeDelta: {x: 888.7048, y: 322}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1200953981
 MonoBehaviour:
@@ -3578,6 +3578,9 @@ MonoBehaviour:
   right: 100
   up: 119
   down: 115
+  randomGenerators:
+  - {fileID: 2037291336}
+  - {fileID: 59255538}
 --- !u!4 &1757437064
 Transform:
   m_ObjectHideFlags: 0
