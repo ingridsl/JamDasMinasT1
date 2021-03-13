@@ -7,7 +7,7 @@ public class Countdown : MonoBehaviour
 {
 
     float currentTime = 0f;
-    readonly float startingTime = 15;
+    public float startingTime = Constants.BASIC_COUNTDOWN_TIME;
     [SerializeField] Text countDownText;
     public GameObject gameOverObject = null;
 
@@ -15,6 +15,11 @@ public class Countdown : MonoBehaviour
     void Start()
     {
         currentTime = startingTime;
+    }
+
+    public void Restart(float newTime)
+    {
+        currentTime = newTime;
     }
 
     // Update is called once per frame
