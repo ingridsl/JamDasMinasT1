@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueLine.cs" />
     <Compile Include="Assets\Scripts\DropItem.cs" />
+    <Compile Include="Assets\Scripts\RandomGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
