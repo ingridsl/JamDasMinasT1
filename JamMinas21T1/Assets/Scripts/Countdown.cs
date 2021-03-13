@@ -7,8 +7,9 @@ public class Countdown : MonoBehaviour
 {
 
     float currentTime = 0f;
-    readonly float startingTime = 50;
+    readonly float startingTime = 15;
     [SerializeField] Text countDownText;
+    public GameObject gameOverObject = null;
 
     // Start is called before the first frame update
     void Start()
@@ -21,11 +22,22 @@ public class Countdown : MonoBehaviour
     {
         currentTime -= 1 * Time.deltaTime;
         countDownText.text = currentTime.ToString("0");
+        if (currentTime <= 10)
+        {
+            countDownText.color = Color.red;
+            countDownText.fontSize = 35;
+        }
+        if (currentTime <= 5)
+        {
+            countDownText.color = Color.red;
+            countDownText.fontSize = 40;
+        }
 
         if (currentTime <= 0)
         {
+            countDownText.fontSize = 50;
             currentTime = 0;
-           //Destroy(countDownText);
+            //gameOverObject.SetActive(true);
         }
     }
 }
