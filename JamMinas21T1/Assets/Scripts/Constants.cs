@@ -8,5 +8,6 @@ public static class Constants
 {
     public static readonly float BASIC_COUNTDOWN_TIME = 50f;
     public static readonly int BASIC_ENEMY_GOLD = 1000;
+    public static readonly int BASIC_RANDOM_STONES = 20;
 
 }
