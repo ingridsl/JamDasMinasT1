@@ -34,7 +34,7 @@ public class DropItem : MonoBehaviour
     void ChooseOreType()
     {
         var valorAleatorio = UnityEngine.Random.Range(0f, 1f);
-        if (valorAleatorio < 0.55) //55% MINÉRIO MENOS VALIOSO
+        if (valorAleatorio < 0.55) //55% MINï¿½RIO MENOS VALIOSO
         {
             oreType = (int)Ore.Dolerito;
         }
@@ -46,7 +46,7 @@ public class DropItem : MonoBehaviour
         {
             oreType = (int)Ore.Esmeralda;
         }
-        else //5% MINÉRIO MAIS VALIOSO
+        else //5% MINï¿½RIO MAIS VALIOSO
         {
             oreType = (int)Ore.Turmalina;
         }
@@ -58,9 +58,15 @@ public class DropItem : MonoBehaviour
         if (other.tag == "Player")
         {
             if (Input.GetMouseButtonDown(0))
+<<<<<<< HEAD
+            {   
+                if (this.GetComponent<SpriteRenderer>().sprite != dropItem) {
+                    this.GetComponent<SpriteRenderer>().sprite = dropItem;
+=======
             {
                 if (this.GetComponent<SpriteRenderer>().sprite != dropItem[(int) oreType]) {
                     this.GetComponent<SpriteRenderer>().sprite = dropItem[(int)oreType];
+>>>>>>> 567d4089ae22de9fd1c1e00a3f0d70623a3396be
                 }
                 else
                 {

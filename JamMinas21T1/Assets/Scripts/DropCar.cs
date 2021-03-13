@@ -1,33 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class PauseManager : MonoBehaviour
+public class DropCar : MonoBehaviour
 {
-    public Slider movementSlider = null;
-    public GameManager game = null;
+    //public Sprite dropItemCar = null;
+    public InventoryCar inventory = null;
+    public InventoryManager InventoryManager = null;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (game.wasdMovement != (movementSlider.value == 0))
-        {
-            game.ChangeMovementButton(movementSlider.value == 0);
-        }
+    }
 
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            OpenClosePause();
+    void OnTriggerStay2D(Collider2D other)
+    {   Debug.Log("iiiii");
+        if (other.tag == "car")
+        {   
+            if (Input.GetMouseButtonDown(0))
+            {   Debug.Log("foi");
+                InventoryManager.RemoveObject();
+               //OpenCloseCar();
+            }
         }
     }
 
-    public void OpenClosePause()
+    /*public void OpenCloseCar()
     {
         var child = this.transform.GetChild(0);
         if (child.gameObject.activeSelf)
@@ -40,5 +43,5 @@ public class PauseManager : MonoBehaviour
             child.gameObject.SetActive(true);
             //Time.timeScale = 0;
         }
-    }
+    }*/
 }
