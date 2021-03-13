@@ -7,6 +7,7 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="ButtonManagement.cs" t="Include" />
           <e p="Constants.cs" t="Include" />
           <e p="Countdown.cs" t="Include" />
           <e p="Dialogue" t="Include">

@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b60974fb-a37f-4995-9b97-7710e1ae8c6d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.JamMinas21T1/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.JamMinas21T1/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.JamMinas21T1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.JamMinas21T1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/InitialMap.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/InitialMap.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JamMinas21T1.sln" beforeDir="false" afterPath="$PROJECT_DIR$/JamMinas21T1.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,10 +27,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/Conversation.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueLine.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/Speaker.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogeManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueTrigger.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/ConversartionPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogeManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" />
       </list>
     </option>
   </component>
@@ -75,7 +80,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1615641829349</updated>
-      <workItem from="1615641844579" duration="2858000" />
+      <workItem from="1615641844579" duration="5027000" />
     </task>
     <servers />
   </component>
