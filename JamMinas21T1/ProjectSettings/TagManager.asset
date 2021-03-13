@@ -4,11 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< HEAD
-  - car
-=======
   - RandomGenerator
->>>>>>> 567d4089ae22de9fd1c1e00a3f0d70623a3396be
   layers:
   - Default
   - TransparentFX
