@@ -55,7 +55,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\Countdown.cs" />
-    <Compile Include="Assets\Goal.cs" />
+    <Compile Include="Assets\Scripts\Goal.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
