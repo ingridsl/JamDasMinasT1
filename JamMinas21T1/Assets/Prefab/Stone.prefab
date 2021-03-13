@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 921724150523646489}
   - component: {fileID: 921724150523646486}
   - component: {fileID: 921724150523646484}
-  - component: {fileID: 921724150523646485}
   - component: {fileID: 921724150523646482}
+  - component: {fileID: 8294195312597223164}
   m_Layer: 0
   m_Name: Stone
   m_TagString: Untagged
@@ -133,19 +133,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &921724150523646485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 921724150523646488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff5734828665af44e90543635c2dc3c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dropItem: {fileID: 21300000, guid: 68dc571137140aa4b8bb381c2425dd4f, type: 3}
 --- !u!61 &921724150523646482
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -172,3 +159,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.57611, y: 0.4677313}
   m_EdgeRadius: 0
+--- !u!114 &8294195312597223164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921724150523646488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff5734828665af44e90543635c2dc3c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropItem: {fileID: 21300000, guid: 68dc571137140aa4b8bb381c2425dd4f, type: 3}
+  inventory: {fileID: 0}

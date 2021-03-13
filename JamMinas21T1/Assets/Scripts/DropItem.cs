@@ -10,7 +10,10 @@ public class DropItem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(inventory == null)
+        {
+            inventory = GameObject.Find("Inventory").GetComponent<InventoryManager>();
+        }
     }
 
     // Update is called once per frame
