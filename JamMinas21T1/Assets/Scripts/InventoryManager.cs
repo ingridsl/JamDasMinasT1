@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
+
     Sprite obj1;
     Sprite obj2;
     Sprite obj3;
     Sprite obj4;
 
     int inventoryAmout = 0;
+    public bool inventoryFull = false;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +58,7 @@ public class InventoryManager : MonoBehaviour
                     if (child.gameObject.name == "Obj4" && obj4 != null)
                     {
                         child.gameObject.GetComponent<Image>().sprite = obj4;
+                        inventoryFull = true;
                     }
                     break;
             }
@@ -77,6 +80,7 @@ public class InventoryManager : MonoBehaviour
                 case 1:
                     if (child.gameObject.name == "Obj1")
                     {
+                        inventoryFull = false;
                         inventoryAmout--;
                         child.gameObject.GetComponent<Image>().sprite = null;
                     }

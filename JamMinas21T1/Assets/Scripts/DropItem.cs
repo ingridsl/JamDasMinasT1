@@ -65,8 +65,11 @@ public class DropItem : MonoBehaviour
                 }
                 else
                 {
-                    inventory.ReceiveObject(dropItem[(int)oreType]);
-                    Destroy(this.gameObject);
+                    if (!inventory.inventoryFull)
+                    {
+                        inventory.ReceiveObject(dropItem[(int)oreType]);
+                        Destroy(this.gameObject);
+                    }
                 }
             }
         }
