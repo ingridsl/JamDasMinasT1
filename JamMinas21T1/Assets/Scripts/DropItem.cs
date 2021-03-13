@@ -24,7 +24,7 @@ public class DropItem : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-               // this.GetComponent<Sprite>() = dropItem;
+               this.GetComponent<SpriteRenderer>().sprite = dropItem;
             }
         }
     }
