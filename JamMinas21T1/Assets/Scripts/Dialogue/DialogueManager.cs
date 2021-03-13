@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -11,7 +12,7 @@ public class DialogueManager : MonoBehaviour
     private int currentIndex;
     private Conversation currentConvo;
     private static DialogueManager instance;
-    // private Animator anim;
+    private Animator anim;
     private Coroutine typing;
 
 
@@ -20,16 +21,24 @@ public class DialogueManager : MonoBehaviour
         if(instance == null)
         {
             instance = this;
-            // anim = GetComponent<Animator>();
+            anim = GetComponent<Animator>();
         }
         else{
             Destroy(gameObject);
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ReadNext();
+        }
+    }
+
     public static void StartConversation(Conversation convo)
     {
-        // instance.anim.SetBool("isOpen", true);
+        instance.anim.SetBool("isOpen", true);
         instance.currentIndex = 0;
         instance.currentConvo = convo;
         instance.speakerName.text = "";
@@ -43,7 +52,7 @@ public class DialogueManager : MonoBehaviour
     {
         if(currentIndex > currentConvo.GetLength())
         {
-            // instance.anim.SetBool("isOpen", false);
+            instance.anim.SetBool("isOpen", false);
             return;
         }
         speakerName.text = currentConvo.GetLineByIndex(currentIndex).speaker.GetName();
@@ -67,7 +76,7 @@ public class DialogueManager : MonoBehaviour
 
     public void CloseDialogue()
     {
-        // instance.anim.SetBool("isOpen", false);
+        instance.anim.SetBool("isOpen", false);
     }
 
 }
