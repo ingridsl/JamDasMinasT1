@@ -53,13 +53,14 @@
     <UnityVersion>2020.3.0f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\PauseManager.cs" />
     <Compile Include="Assets\Scripts\Countdown.cs" />
-    <Compile Include="Assets\Scripts\Goal.cs" />
-    <Compile Include="Assets\Scripts\DropItem.cs" />
     <Compile Include="Assets\Scripts\Constants.cs" />
-    <Compile Include="Assets\PauseManager.cs" />
-    <Compile Include="Assets\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Goal.cs" />
+    <Compile Include="Assets\Scripts\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\DropItem.cs" />
+    <Compile Include="Assets\Scripts\InventoryManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
