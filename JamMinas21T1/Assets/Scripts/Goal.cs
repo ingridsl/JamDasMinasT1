@@ -28,7 +28,7 @@ public class Goal : MonoBehaviour
     void SetGoal()
     {
         enemyGold *= (int) 1.5f;
-        int playerGold = enemyGold;//valor provisorio pegar o dinheiro do player
+        int playerGold = enemyGold; //PROVISORIO: valor provisorio pegar o dinheiro do player
         float extraTime = playerGold / enemyGold > 1.5 ? -10 : 10;
 
         contdown.startingTime += extraTime;

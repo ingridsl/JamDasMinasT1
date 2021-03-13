@@ -6,6 +6,7 @@ public class DropItem : MonoBehaviour
 {
 
     public Sprite dropItem = null;
+    public InventoryManager inventory = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,14 @@ public class DropItem : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-               this.GetComponent<SpriteRenderer>().sprite = dropItem;
+                if (this.GetComponent<SpriteRenderer>().sprite != dropItem) {
+                    this.GetComponent<SpriteRenderer>().sprite = dropItem;
+                }
+                else
+                {
+                    inventory.ReceiveObject(dropItem);
+                    Destroy(this.gameObject);
+                }
             }
         }
     }

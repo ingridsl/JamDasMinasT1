@@ -1,0 +1,47 @@
+---- GDD ----
+JAM DAS MINAS 2021 - TIME 01
+
+
+Nome do jogo:
+
+Participantes:
+	- Cecihoney
+	- Ingrid
+	- Louie
+	- Melina
+	- Morgana
+	- Thamires
+
+----------------------------------------
+Objetivo do Jogo: O player tem uma quantidade de tempo pré-definida para juntar minérios de forma que seus valores de venda ultrapassem os do adversário.
+
+Condição de GameOver: Não conseguir ultrapassar o valor de venda de minérios juntado pelo adversário.
+
+----------------------------------------
+Controles:
+	- WASD ou setas do teclado.
+	- ajustáveis pelo menu de pause
+	- o padrão ao abrir o jogo é WASD
+
+----------------------------------------
+Personagens
+Maria Mineira: Player.
+
+Barroso: Rival que se aproveita dos empregados.
+
+Senhor Fortura: Comprador dos minerais.
+
+Empregados do Barroso: NPCs que parecem escravos
+
+----------------------------------------
+Objetos interativos
+	- Carrinho de minérios
+	- Placa de valor de cada minério
+
+----------------------------------------
+Minerais
+	- Turmalina Paraíba
+	- Granada
+	- Dolerito
+	- Esmeralda
+----------------------------------------
