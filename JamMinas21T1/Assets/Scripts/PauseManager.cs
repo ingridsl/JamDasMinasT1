@@ -33,12 +33,12 @@ public class PauseManager : MonoBehaviour
         if (child.gameObject.activeSelf)
         {
             child.gameObject.SetActive(false);
-            Time.timeScale = 1;
+            //Time.timeScale = 1;
         }
         else
         {
             child.gameObject.SetActive(true);
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
         }
     }
 }

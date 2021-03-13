@@ -34,7 +34,7 @@ public class InventoryManager : MonoBehaviour
             switch (inventoryAmout)
             {
                 case 0:
-                    //Não entra nesse caso
+                    //Nï¿½o entra nesse caso
                     break;
                 case 1:
                     if (child.gameObject.name == "Obj1" && obj1 != null)
@@ -75,7 +75,7 @@ public class InventoryManager : MonoBehaviour
             switch (inventoryAmout)
             {
                 case 0:
-                    //Não entra nesse caso
+                    //Nï¿½o entra nesse caso
                     break;
                 case 1:
                     if (child.gameObject.name == "Obj1")
@@ -159,7 +159,7 @@ public class InventoryManager : MonoBehaviour
                 AddInventoryImage();
                 break;
             case 4:
-                //Não fazer nada ou barulhinho de erro
+                //Nï¿½o fazer nada ou barulhinho de erro
                 break;
         }
     }
