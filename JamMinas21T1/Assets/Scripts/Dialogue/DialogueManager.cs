@@ -43,7 +43,7 @@ public class DialogueManager : MonoBehaviour
         instance.currentConvo = convo;
         instance.speakerName.text = "";
         instance.dialogue.text = "";
-        instance.navButtonText.text = "";
+        instance.navButtonText.text = ">";
 
         instance.ReadNext();
     }

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0735ed4e83154d8a9e865226c5a3f31a, type: 3}
+  m_Name: Fortune
+  m_EditorClassIdentifier: 
+  allLines:
+  - speaker: {fileID: 11400000, guid: b481b3472f8ad14f4a8cf740968bb65f, type: 2}
+    dialogue: Senhor Fortuna, se eu trouxer o que o senhor pedir, o senhor compra?
+  - speaker: {fileID: 11400000, guid: 24101b44d71666ee7b1a021dc92e0589, type: 2}
+    dialogue: "Pra mim quem me tr\xE1s o min\xE9rio pouco importa. Eu quero \xE9
+      coisa de boa qualidade!"
+  - speaker: {fileID: 11400000, guid: b481b3472f8ad14f4a8cf740968bb65f, type: 2}
+    dialogue: "\xC9 o que senhor vai ter! Se o pagamento for justo claro!"
+  - speaker: {fileID: 11400000, guid: 24101b44d71666ee7b1a021dc92e0589, type: 2}
+    dialogue: Prometo que serei justo!
