@@ -13,7 +13,7 @@ public class InventoryManager : MonoBehaviour
 
     int inventoryAmout = 0;
     public bool inventoryFull = false;
-
+    Sprite aux;
     // Start is called before the first frame update
     void Start()
     {
@@ -65,13 +65,14 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void RemoveObject()
+    public Sprite RemoveObject()
     {
         //PROVISORIO: por enquanto, retirar na ordem q colocou. depois, poder retirar qualquer um
         var canvas = transform.GetChild(0);
         var panel = canvas.GetChild(0);
+        
         foreach (Transform child in panel.transform)
-        {
+        {   aux = child.gameObject.GetComponent<Image>().sprite;
             switch (inventoryAmout)
             {
                 case 0:
@@ -139,6 +140,8 @@ public class InventoryManager : MonoBehaviour
             }
         }
         inventoryAmout--;
+        return aux;
+        
     }
 
     public void ReceiveObject(Sprite newObj)
