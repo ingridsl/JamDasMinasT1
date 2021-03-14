@@ -52,26 +52,29 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Dialogue\Conversation.cs" />
-     <Compile Include="Assets\Scripts\GameManager.cs" />
-     <Compile Include="Assets\Scripts\Dialogue\Tester.cs" />
-     <Compile Include="Assets\Scripts\InventoryManager.cs" />
-     <Compile Include="Assets\Scripts\ButtonManagement.cs" />
-     <Compile Include="Assets\Scripts\Dialogue\DialogeManager.cs" />
-     <Compile Include="Assets\Scripts\PauseManager.cs" />
-     <Compile Include="Assets\Scripts\Countdown.cs" />
-     <Compile Include="Assets\Scripts\Dialogue\Speaker.cs" />
-     <Compile Include="Assets\Scripts\Dialogue\DialogueTrigger.cs" />
-     <Compile Include="Assets\Scripts\Dialogue\DialogueManager.cs" />
-     <Compile Include="Assets\Scripts\Dialogue\ConversartionPlayer.cs" />
-     <Compile Include="Assets\Scripts\Dialogue\Dialogue.cs" />
-     <Compile Include="Assets\Scripts\Constants.cs" />
-     <Compile Include="Assets\Scripts\RandomGenerator.cs" />
-     <Compile Include="Assets\Scripts\Goal.cs" />
-     <Compile Include="Assets\Scripts\PlayerManager.cs" />
-     <Compile Include="Assets\Scripts\Dialogue\DialogueLine.cs" />
-     <Compile Include="Assets\Scripts\DropItem.cs" />
-     <Compile Include="Assets\Scripts\BoardManager.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\Conversation.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\Tester.cs" />
+    <Compile Include="Assets\Scripts\InventoryManager.cs" />
+    <Compile Include="Assets\Scripts\ButtonManagement.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\DialogeManager.cs" />
+    <Compile Include="Assets\Scripts\PauseManager.cs" />
+    <Compile Include="Assets\Scripts\Countdown.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\Speaker.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\DialogueTrigger.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\DialogueManager.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\ConversartionPlayer.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\Dialogue.cs" />
+    <Compile Include="Assets\Scripts\Constants.cs" />
+    <Compile Include="Assets\Scripts\RandomGenerator.cs" />
+    <Compile Include="Assets\Scripts\Goal.cs" />
+    <Compile Include="Assets\Scripts\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\DialogueLine.cs" />
+    <Compile Include="Assets\Scripts\DropItem.cs" />
+    <Compile Include="Assets\Scripts\DropCar.cs" />
+    <Compile Include="Assets\Scripts\InventoryCar.cs" />
+  </ItemGroup>
+  <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
