@@ -53,21 +53,23 @@ public class DialogueManager : MonoBehaviour
 
     public void ReadNext()
     {
-        if(currentIndex > currentConvo.GetLength())
-        {
-            // instance.anim.SetBool("isOpen", false);
-            var child = instance.transform.GetChild(0);
-            child.gameObject.SetActive(false);
-            Time.timeScale = 1;
-            return;
-        }
-        speakerName.text = currentConvo.GetLineByIndex(currentIndex).speaker.GetName();
+        if (currentConvo != null) {
+            if (currentIndex > currentConvo.GetLength())
+            {
+                // instance.anim.SetBool("isOpen", false);
+                var child = instance.transform.GetChild(0);
+                child.gameObject.SetActive(false);
+                Time.timeScale = 1;
+                return;
+            }
+            speakerName.text = currentConvo.GetLineByIndex(currentIndex).speaker.GetName();
 
-        StopAllCoroutines();
-        instance.StartCoroutine(TypeText(currentConvo.GetLineByIndex(currentIndex).dialogue));
-        speakerSprite.sprite = currentConvo.GetLineByIndex(currentIndex).speaker.GetSprite();
-        currentIndex++;
-        Time.timeScale = 0;
+            StopAllCoroutines();
+            instance.StartCoroutine(TypeText(currentConvo.GetLineByIndex(currentIndex).dialogue));
+            speakerSprite.sprite = currentConvo.GetLineByIndex(currentIndex).speaker.GetSprite();
+            currentIndex++;
+            Time.timeScale = 0;
+        }
     }
 
     private IEnumerator TypeText(string text)
