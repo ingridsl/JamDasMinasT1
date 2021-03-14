@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    public Animator animator = null;
     public float moveSpeed = 1f;
     public GameManager gameManager = null;
 
@@ -22,6 +23,7 @@ public class PlayerManager : MonoBehaviour
 
     void Movement()
     {
+
         Vector3 moveInput = Vector3.zero;
         if (Input.GetKey(gameManager.left) || Input.GetKey(gameManager.right))
         {
@@ -32,6 +34,10 @@ public class PlayerManager : MonoBehaviour
         {
             moveInput.y = Input.GetAxis("Vertical");
         }
+
+        animator.SetFloat("Horizontal", moveInput.x);
+        animator.SetFloat("Vertical", moveInput.y);
+        animator.SetFloat("Speed", moveInput.magnitude);
         transform.position += moveInput * moveSpeed * Time.deltaTime;
     }
 }
