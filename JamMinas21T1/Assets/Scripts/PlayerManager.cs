@@ -54,7 +54,6 @@ public class PlayerManager : MonoBehaviour
         Vector3 mousePos = Input.mousePosition;
         var playerPosition = Camera.main.WorldToScreenPoint(transform.position);
 
-
         animator.SetBool("Click", Input.GetMouseButtonDown(0));
         animator.SetFloat("MouseX", mousePos.x - playerPosition.x);
         animator.SetFloat("MouseY", mousePos.y - playerPosition.y);
