@@ -39,6 +39,16 @@ public class InventoryCar : MonoBehaviour
 
     }
 
+    public void CleanCar()
+    {
+        collectedOres = new CollectedOre[4];
+        inventoryAmout = 0;
+        obj1 = null;
+        obj2 = null;
+        obj3 = null;
+        obj4 = null;
+    }
+
     public int SwitchOre(Sprite obj)
     {
         if (obj == Dolerito)

@@ -64,7 +64,7 @@
     <Compile Include="Assets\Scripts\Countdown.cs" />
     <Compile Include="Assets\Scripts\Dialogue\Speaker.cs" />
     <Compile Include="Assets\Scripts\Dialogue\CarConversation.cs" />
-    <Compile Include="Assets\MoneyCalculator.cs" />
+    <Compile Include="Assets\Scripts\MoneyCalculator.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueManager.cs" />
     <Compile Include="Assets\Scripts\Dialogue\ConversartionPlayer.cs" />
     <Compile Include="Assets\Scripts\Dialogue\Dialogue.cs" />

@@ -9,7 +9,6 @@ public class Countdown : MonoBehaviour
     float currentTime = 0f;
     public float startingTime = Constants.BASIC_COUNTDOWN_TIME;
     [SerializeField] Text countDownText;
-    public GameObject gameOverObject = null;
 
     public MoneyCalculator moneyCalculator = null;
 
@@ -23,7 +22,10 @@ public class Countdown : MonoBehaviour
 
     public void Restart(float newTime)
     {
+        timeIsUp = false;
         currentTime = newTime;
+        countDownText.color = Color.black;
+        countDownText.fontSize = 30;
     }
 
     // Update is called once per frame
