@@ -28,19 +28,19 @@ public class DropItem : MonoBehaviour
     void ChooseOreType()
     {
         var valorAleatorio = UnityEngine.Random.Range(0f, 1f);
-        if (valorAleatorio < 0.55) //55% MIN�RIO MENOS VALIOSO
+        if (valorAleatorio < 0.45) //45% MIN�RIO MENOS VALIOSO
         {
             oreType = (int)Constants.Ore.Dolerito;
         }
-        else if(0.55 < valorAleatorio && valorAleatorio < 0.8) //25%
+        else if(0.45 < valorAleatorio && valorAleatorio < 0.75) //30%
         {
             oreType = (int)Constants.Ore.Granada;
         }
-        else if (0.8 < valorAleatorio && valorAleatorio < 0.95) //15%
+        else if (0.75 < valorAleatorio && valorAleatorio < 0.92) //17%
         {
             oreType = (int)Constants.Ore.Esmeralda;
         }
-        else //5% MIN�RIO MAIS VALIOSO
+        else //8% MIN�RIO MAIS VALIOSO
         {
             oreType = (int)Constants.Ore.Turmalina;
         }
