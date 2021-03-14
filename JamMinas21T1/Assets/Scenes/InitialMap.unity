@@ -2326,7 +2326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a22836a0ffe4b43a9fd7f458da26e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingTime: 30
+  startingTime: 40
   countDownText: {fileID: 897434821}
   gameOverObject: {fileID: 0}
   moneyCalculator: {fileID: 1461778834}
@@ -3873,9 +3873,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '50
-
-'
+  m_Text: 40
 --- !u!222 &897434822
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9254,7 +9252,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100g
+  m_Text: 30g
 --- !u!222 &2044365621
 CanvasRenderer:
   m_ObjectHideFlags: 0
