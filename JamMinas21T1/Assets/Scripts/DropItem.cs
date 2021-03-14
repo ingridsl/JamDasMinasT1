@@ -7,6 +7,7 @@ public class DropItem : MonoBehaviour
 
     public int oreType;
     public Sprite[] dropItem;
+    bool isInside = false;
 
     public InventoryManager inventory = null;
     // Start is called before the first frame update
@@ -46,12 +47,47 @@ public class DropItem : MonoBehaviour
         }
     }
 
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            isInside = true;
+            if (Input.GetMouseButtonDown(0))
+            {
+                OnTriggerGeneral(other);
+            }
+        }
+    }   
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
+            isInside = false;
             var playerManager = other.transform.GetComponent<PlayerManager>();
             playerManager.isHitingOre = false;
+        }
+    }
+
+    private void OnTriggerGeneral(Collider2D other)
+    {
+        var playerManager = other.transform.GetComponent<PlayerManager>();
+        playerManager.isHitingOre = true;
+        playerManager.ActivateMiningAnim();
+
+        if (this.GetComponent<SpriteRenderer>().sprite != dropItem[(int)oreType])
+        {
+            this.GetComponent<SpriteRenderer>().sprite = dropItem[(int)oreType];
+
+        }
+        else
+        {
+            if (!inventory.inventoryFull)
+            {
+                inventory.ReceiveObject(dropItem[(int)oreType]);
+                Destroy(this.gameObject);
+            }
         }
     }
 
@@ -61,23 +97,7 @@ public class DropItem : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                var playerManager = other.transform.GetComponent<PlayerManager>();
-                playerManager.isHitingOre = true;
-                playerManager.ActivateMiningAnim();
-
-                if (this.GetComponent<SpriteRenderer>().sprite != dropItem[(int)oreType])
-                {
-                    this.GetComponent<SpriteRenderer>().sprite = dropItem[(int)oreType];
-
-                }
-                else
-                {
-                    if (!inventory.inventoryFull)
-                    {
-                        inventory.ReceiveObject(dropItem[(int)oreType]);
-                        Destroy(this.gameObject);
-                    }
-                }
+                OnTriggerGeneral(other);
             }
         }
     }

@@ -1331,6 +1331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseManager: {fileID: 0}
+  goal: {fileID: 2035475349}
 --- !u!114 &441391664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2326,9 +2327,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a22836a0ffe4b43a9fd7f458da26e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingTime: 40
+  startingTime: 50
   countDownText: {fileID: 897434821}
-  gameOverObject: {fileID: 0}
   moneyCalculator: {fileID: 1461778834}
 --- !u!1 &575874656
 GameObject:
@@ -3569,6 +3569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseManager: {fileID: 0}
+  goal: {fileID: 0}
 --- !u!1 &891268422
 GameObject:
   m_ObjectHideFlags: 0
@@ -7219,6 +7220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseManager: {fileID: 1170862606}
+  goal: {fileID: 0}
 --- !u!1 &1686423374
 GameObject:
   m_ObjectHideFlags: 0
@@ -8018,6 +8020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseManager: {fileID: 0}
+  goal: {fileID: 2035475349}
 --- !u!114 &1777365623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9113,6 +9116,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   achieved: 0
+  contdown: {fileID: 552846225}
+  gameManager: {fileID: 1757437063}
+  player: {fileID: 856130803}
   enemyGoldText: {fileID: 2044365620}
   victory: {fileID: 18878836}
   gameover: {fileID: 1561349148}
