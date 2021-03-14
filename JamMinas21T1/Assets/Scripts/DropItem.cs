@@ -4,13 +4,7 @@ using UnityEngine;
 
 public class DropItem : MonoBehaviour
 {
-    public enum Ore {
-        Dolerito,
-        Granada,
-        Esmeralda,
-        Turmalina
-    };
-
+    
     public int oreType;
     public Sprite[] dropItem;
 
@@ -36,19 +30,19 @@ public class DropItem : MonoBehaviour
         var valorAleatorio = UnityEngine.Random.Range(0f, 1f);
         if (valorAleatorio < 0.55) //55% MIN�RIO MENOS VALIOSO
         {
-            oreType = (int)Ore.Dolerito;
+            oreType = (int)Constants.Ore.Dolerito;
         }
         else if(0.55 < valorAleatorio && valorAleatorio < 0.8) //25%
         {
-            oreType = (int)Ore.Granada;
+            oreType = (int)Constants.Ore.Granada;
         }
         else if (0.8 < valorAleatorio && valorAleatorio < 0.95) //15%
         {
-            oreType = (int)Ore.Esmeralda;
+            oreType = (int)Constants.Ore.Esmeralda;
         }
         else //5% MIN�RIO MAIS VALIOSO
         {
-            oreType = (int)Ore.Turmalina;
+            oreType = (int)Constants.Ore.Turmalina;
         }
     }
 

@@ -4,25 +4,56 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class InventoryCar : MonoBehaviour
-{   
+{
     Sprite obj1;
     Sprite obj2;
     Sprite obj3;
     Sprite obj4;
 
-    int[] pontos = new int[]{0,0,0,0};
+    public Sprite Dolerito;
+    public Sprite Granada;
+    public Sprite Esmeralda;
+    public Sprite Turmalina;
+
+    //public int[] pontos = new int[] { 0, 0, 0, 0 };
+
+    public struct CollectedOre
+    {
+        public Sprite sprite;
+        public int amount;
+        public int oreType;
+    }
+
+    public CollectedOre[] collectedOres = new CollectedOre[4];
 
     int inventoryAmout = 0;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    public int SwitchOre(Sprite obj)
+    {
+        if (obj == Dolerito)
+        {
+            return (int)Constants.Ore.Dolerito;
+        }
+        else if (obj == Granada)
+        {
+            return (int)Constants.Ore.Granada;
+        }
+        else if (obj == Esmeralda)
+        {
+            return (int)Constants.Ore.Esmeralda;
+        }
+        return (int)Constants.Ore.Turmalina;
     }
 
     public void AddInventoryImage()
@@ -40,14 +71,14 @@ public class InventoryCar : MonoBehaviour
                     if (child.gameObject.name == "Obj1" && obj1 != null)
                     {
                         child.gameObject.GetComponent<Image>().sprite = obj1;
-                       
+
                     }
                     break;
                 case 2:
                     if (child.gameObject.name == "Obj2" && obj2 != null)
                     {
                         child.gameObject.GetComponent<Image>().sprite = obj2;
-                       
+
                     }
                     break;
                 case 3:
@@ -67,18 +98,27 @@ public class InventoryCar : MonoBehaviour
         }
     }
 
-    public void AddPoints(Sprite newObj){
-        if (newObj == obj1){
-            pontos[0]++;
+    public void AddPoints(Sprite newObj)
+    {
+        if (newObj == collectedOres[0].sprite)
+        {
+            //pontos[0]++;
+            collectedOres[0].amount++;
         }
-        else if(newObj == obj2){
-            pontos[1]++;
+        else if (newObj == collectedOres[1].sprite)
+        {
+            //pontos[1]++;
+            collectedOres[1].amount++;
         }
-        else if(newObj == obj3){
-            pontos[2]++;
+        else if (newObj == collectedOres[2].sprite)
+        {
+            //pontos[2]++;
+            collectedOres[2].amount++;
         }
-        else if(newObj == obj4){
-            pontos[2]++;
+        else if (newObj == collectedOres[3].sprite)
+        {
+            collectedOres[3].amount++;
+            //pontos[2]++;
         }
     }
 
@@ -88,55 +128,81 @@ public class InventoryCar : MonoBehaviour
         {
             case 0:
                 obj1 = newObj;
+                collectedOres[0].sprite = newObj;
                 inventoryAmout++;
-                pontos[0]++;
+                collectedOres[0].amount++;
+                //pontos[0]++;
                 AddInventoryImage();
+                collectedOres[0].oreType = SwitchOre(collectedOres[0].sprite);
                 break;
             case 1:
-                if(newObj != obj1){
+                if (newObj != collectedOres[0].sprite)
+                {
                     obj2 = newObj;
-                    pontos[1]++;
+                    collectedOres[1].sprite = newObj;
+                    collectedOres[1].amount++;
+                    //pontos[1]++;
                     inventoryAmout++;
                     AddInventoryImage();
+                    collectedOres[1].oreType = SwitchOre(collectedOres[1].sprite);
                 }
-                else{
-                    pontos[0]++;
+                else
+                {
+                    collectedOres[0].amount++;
+                    //pontos[0]++;
                 }
                 break;
             case 2:
-                if(newObj != obj2 && newObj != obj1){
+                if (newObj != collectedOres[1].sprite && newObj != collectedOres[0].sprite)
+                {
                     obj3 = newObj;
-                    pontos[2]++;
+                    collectedOres[2].sprite = newObj;
+                    collectedOres[2].amount++;
+                    //pontos[2]++;
                     inventoryAmout++;
                     AddInventoryImage();
+                    collectedOres[2].oreType = SwitchOre(collectedOres[2].sprite);
                 }
-                else if(newObj == obj1){   
-                    pontos[0]++;
+                else if (newObj == collectedOres[0].sprite)
+                {
+                    collectedOres[0].amount++;
+                    //pontos[0]++;
                 }
-                else if(newObj == obj2){
-                    pontos[1]++;
+                else if (newObj == collectedOres[1].sprite)
+                {
+                    collectedOres[1].amount++;
+                    //pontos[1]++;
                 }
                 break;
             case 3:
-                if(newObj != obj3 && newObj != obj2 && newObj != obj1){
+                if (newObj != collectedOres[2].sprite && newObj != collectedOres[1].sprite && newObj != collectedOres[0].sprite)
+                {
                     obj4 = newObj;
+                    collectedOres[3].sprite = newObj;
+                    collectedOres[3].amount++;
                     inventoryAmout++;
-                    pontos[3]++;
+                    //pontos[3]++;
                     AddInventoryImage();
+                    collectedOres[3].oreType = SwitchOre(collectedOres[3].sprite);
                 }
-                else if(newObj == obj1){   
-                    pontos[0]++;
+                else if (newObj == collectedOres[0].sprite)
+                {
+                    collectedOres[0].amount++;
+                    //pontos[0]++;
                 }
-                else if(newObj == obj2){
-                    pontos[1]++;
+                else if (newObj == collectedOres[1].sprite)
+                {
+                    collectedOres[1].amount++;
+                    //pontos[1]++;
                 }
-                else if(newObj == obj3){
-                    pontos[2]++;
+                else if (newObj == collectedOres[2].sprite)
+                {
+                    collectedOres[2].amount++;
+                    // pontos[2]++;
                 }
                 break;
             case 4:
                 AddPoints(newObj);
-                //N�o fazer nada ou barulhinho de erro
                 break;
         }
     }

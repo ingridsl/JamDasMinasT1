@@ -10,4 +10,12 @@ public static class Constants
     public static readonly int BASIC_ENEMY_GOLD = 1000;
     public static readonly int BASIC_RANDOM_STONES = 20;
 
+    public enum Ore
+    {
+        Dolerito,
+        Granada,
+        Esmeralda,
+        Turmalina
+    };
+
 }
