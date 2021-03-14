@@ -59,6 +59,8 @@ public class DropItem : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
+                other.transform.GetComponent<PlayerManager>().ActivateMiningAnim();
+
                 if (this.GetComponent<SpriteRenderer>().sprite != dropItem[(int) oreType]) {
                     this.GetComponent<SpriteRenderer>().sprite = dropItem[(int)oreType];
 
