@@ -871,6 +871,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   achieved: 0
+  enemyGoldText: {fileID: 0}
+  victory: {fileID: 0}
+  gameover: {fileID: 0}
+  moneyCalculator: {fileID: 0}
 --- !u!114 &282122275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1237,8 +1241,10 @@ MonoBehaviour:
   animator: {fileID: 405040745}
   moveSpeed: 5
   gameManager: {fileID: 1110907356}
+  isHitingOre: 0
   testmousex: 0
   testmousey: 0
+  canMove: 1
 --- !u!4 &405040748
 Transform:
   m_ObjectHideFlags: 0
@@ -2352,7 +2358,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &828172837
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4027,8 +4033,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1300213233}
-  - component: {fileID: 1300213235}
-  - component: {fileID: 1300213234}
   m_Layer: 0
   m_Name: PainelTodo
   m_TagString: Untagged
@@ -4060,41 +4064,6 @@ RectTransform:
   m_AnchoredPosition: {x: 2.8511963, y: 113.9088}
   m_SizeDelta: {x: -83.519, y: 172.7231}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1300213234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300213232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f3e852d2c833ee4a9e64340aca11dff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speakerName: {fileID: 1914153716}
-  dialogue: {fileID: 545862744}
-  navButtonText: {fileID: 1618182471}
-  speakerSprite: {fileID: 854016971}
---- !u!95 &1300213235
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300213232}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c8ea966b0c0ee1f82b4ff1b79b76337a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1373779620
 GameObject:
   m_ObjectHideFlags: 0
@@ -4360,7 +4329,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1300213234}
+      - m_Target: {fileID: 1808344507}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: ReadNext
         m_Mode: 1
@@ -5021,7 +4990,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562845033}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.13, y: 1.55, z: 0}
+  m_LocalPosition: {x: 0.13, y: 0.44, z: 0}
   m_LocalScale: {x: 2.7651, y: 2.7651, z: 2.7651}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6153,6 +6122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1808344506}
+  - component: {fileID: 1808344507}
   m_Layer: 0
   m_Name: CaixaDialogo
   m_TagString: Untagged
@@ -6175,6 +6145,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1808344507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808344505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f3e852d2c833ee4a9e64340aca11dff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speakerName: {fileID: 1914153716}
+  dialogue: {fileID: 545862744}
+  navButtonText: {fileID: 1618182471}
+  speakerSprite: {fileID: 854016971}
 --- !u!1 &1826719499
 GameObject:
   m_ObjectHideFlags: 0
