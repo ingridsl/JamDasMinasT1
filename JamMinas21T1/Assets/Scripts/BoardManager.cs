@@ -18,10 +18,12 @@ public class BoardManager : MonoBehaviour
     public void OpenBoard()
     {
         _board.gameObject.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void close()
     {
         _board.gameObject.SetActive(false);
+        Time.timeScale = 1;
     }
 }
