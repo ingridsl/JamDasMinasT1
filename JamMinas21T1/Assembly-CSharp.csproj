@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\InventoryCar.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueLine.cs" />
     <Compile Include="Assets\Scripts\DropItem.cs" />
+    <Compile Include="Assets\MoneyCalculator.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
