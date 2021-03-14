@@ -22,9 +22,11 @@
             <e p="Speaker.cs" t="Include" />
             <e p="Tester.cs" t="Include" />
           </e>
+          <e p="DropCar.cs" t="Include" />
           <e p="DropItem.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="Goal.cs" t="Include" />
+          <e p="InventoryCar.cs" t="Include" />
           <e p="InventoryManager.cs" t="Include" />
           <e p="PauseManager.cs" t="Include" />
           <e p="PlayerManager.cs" t="Include" />

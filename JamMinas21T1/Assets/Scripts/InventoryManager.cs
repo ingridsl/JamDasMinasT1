@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
+
     Sprite obj1;
     Sprite obj2;
     Sprite obj3;
     Sprite obj4;
 
     int inventoryAmout = 0;
+    public bool inventoryFull = false;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +34,7 @@ public class InventoryManager : MonoBehaviour
             switch (inventoryAmout)
             {
                 case 0:
-                    //Não entra nesse caso
+                    //Nï¿½o entra nesse caso
                     break;
                 case 1:
                     if (child.gameObject.name == "Obj1" && obj1 != null)
@@ -56,6 +58,7 @@ public class InventoryManager : MonoBehaviour
                     if (child.gameObject.name == "Obj4" && obj4 != null)
                     {
                         child.gameObject.GetComponent<Image>().sprite = obj4;
+                        inventoryFull = true;
                     }
                     break;
             }
@@ -72,62 +75,70 @@ public class InventoryManager : MonoBehaviour
             switch (inventoryAmout)
             {
                 case 0:
-                    //Não entra nesse caso
+                    //Nï¿½o entra nesse caso
                     break;
                 case 1:
                     if (child.gameObject.name == "Obj1")
                     {
-                        inventoryAmout--;
+                        obj1 = null;
                         child.gameObject.GetComponent<Image>().sprite = null;
                     }
                     break;
                 case 2:
                     if (child.gameObject.name == "Obj1")
                     {
-                        inventoryAmout--;
+                        obj1 = obj2;
                         child.gameObject.GetComponent<Image>().sprite = obj2;
                     }
                     if (child.gameObject.name == "Obj2")
                     {
+                        obj2 = null;
                         child.gameObject.GetComponent<Image>().sprite = null;
                     }
                     break;
                 case 3:
                     if (child.gameObject.name == "Obj1")
                     {
-                        inventoryAmout--;
+                        obj1 = obj2;
                         child.gameObject.GetComponent<Image>().sprite = obj2;
                     }
                     if (child.gameObject.name == "Obj2")
                     {
+                        obj2 = obj3;
                         child.gameObject.GetComponent<Image>().sprite = obj3;
                     }
                     if (child.gameObject.name == "Obj3")
                     {
+                        obj3 = null;
                         child.gameObject.GetComponent<Image>().sprite = null;
                     }
                     break;
                 case 4:
+                    inventoryFull = false;
                     if (child.gameObject.name == "Obj1")
                     {
-                        inventoryAmout--;
+                        obj1 = obj2;
                         child.gameObject.GetComponent<Image>().sprite = obj2;
                     }
                     if (child.gameObject.name == "Obj2")
                     {
+                        obj2 = obj3;
                         child.gameObject.GetComponent<Image>().sprite = obj3;
                     }
                     if (child.gameObject.name == "Obj3")
                     {
+                        obj3 = obj4;
                         child.gameObject.GetComponent<Image>().sprite = obj4;
                     }
                     if (child.gameObject.name == "Obj4")
                     {
+                        obj4 = null;
                         child.gameObject.GetComponent<Image>().sprite = null;
                     }
                     break;
             }
         }
+        inventoryAmout--;
     }
 
     public void ReceiveObject(Sprite newObj)
@@ -155,7 +166,7 @@ public class InventoryManager : MonoBehaviour
                 AddInventoryImage();
                 break;
             case 4:
-                //Não fazer nada ou barulhinho de erro
+                //Nï¿½o fazer nada ou barulhinho de erro
                 break;
         }
     }
