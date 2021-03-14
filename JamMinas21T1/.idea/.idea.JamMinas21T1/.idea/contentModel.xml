@@ -12,13 +12,12 @@
           <e p="Constants.cs" t="Include" />
           <e p="Countdown.cs" t="Include" />
           <e p="Dialogue" t="Include">
+            <e p="CarConversation.cs" t="Include" />
             <e p="ConversartionPlayer.cs" t="Include" />
             <e p="Conversation.cs" t="Include" />
-            <e p="DialogeManager.cs" t="Include" />
             <e p="Dialogue.cs" t="Include" />
             <e p="DialogueLine.cs" t="Include" />
             <e p="DialogueManager.cs" t="Include" />
-            <e p="DialogueTrigger.cs" t="Include" />
             <e p="Speaker.cs" t="Include" />
             <e p="Tester.cs" t="Include" />
           </e>
