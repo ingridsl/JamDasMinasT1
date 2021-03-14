@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DropItem : MonoBehaviour
 {
-    
+
     public int oreType;
     public Sprite[] dropItem;
 
@@ -12,7 +12,7 @@ public class DropItem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(inventory == null)
+        if (inventory == null)
         {
             inventory = GameObject.Find("Inventory").GetComponent<InventoryManager>();
         }
@@ -22,7 +22,7 @@ public class DropItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void ChooseOreType()
@@ -32,7 +32,7 @@ public class DropItem : MonoBehaviour
         {
             oreType = (int)Constants.Ore.Dolerito;
         }
-        else if(0.45 < valorAleatorio && valorAleatorio < 0.75) //30%
+        else if (0.45 < valorAleatorio && valorAleatorio < 0.75) //30%
         {
             oreType = (int)Constants.Ore.Granada;
         }
@@ -46,6 +46,14 @@ public class DropItem : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            var playerManager = other.transform.GetComponent<PlayerManager>();
+            playerManager.isHitingOre = false;
+        }
+    }
 
     void OnTriggerStay2D(Collider2D other)
     {
@@ -53,9 +61,12 @@ public class DropItem : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                other.transform.GetComponent<PlayerManager>().ActivateMiningAnim();
+                var playerManager = other.transform.GetComponent<PlayerManager>();
+                playerManager.isHitingOre = true;
+                playerManager.ActivateMiningAnim();
 
-                if (this.GetComponent<SpriteRenderer>().sprite != dropItem[(int) oreType]) {
+                if (this.GetComponent<SpriteRenderer>().sprite != dropItem[(int)oreType])
+                {
                     this.GetComponent<SpriteRenderer>().sprite = dropItem[(int)oreType];
 
                 }

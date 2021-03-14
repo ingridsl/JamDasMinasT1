@@ -9,8 +9,12 @@ public class PlayerManager : MonoBehaviour
     public float moveSpeed = 1f;
     public GameManager gameManager = null;
 
+    public bool isHitingOre = false;
+
     public float testmousex = 0;
     public float testmousey = 0;
+
+    public bool canMove = true;
 
     // Start is called before the first frame update
     void Start()
@@ -21,8 +25,10 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movement();
-        ActivateMiningAnim();
+        if (canMove) {
+            Movement();
+            ActivateMiningAnim();
+        }
 
         Vector3 mousePos = Input.mousePosition;
         testmousex = mousePos.x;
@@ -54,8 +60,7 @@ public class PlayerManager : MonoBehaviour
         Vector3 mousePos = Input.mousePosition;
         var playerPosition = Camera.main.WorldToScreenPoint(transform.position);
 
-
-        animator.SetBool("Click", Input.GetMouseButtonDown(0));
+        animator.SetBool("Click", Input.GetMouseButtonDown(0) && isHitingOre);
         animator.SetFloat("MouseX", mousePos.x - playerPosition.x);
         animator.SetFloat("MouseY", mousePos.y - playerPosition.y);
     }
