@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Fortune
   m_EditorClassIdentifier: 
   speakerName: Fortune
-  speakerSprite: {fileID: 21300000, guid: d2efff0b0aaf8440d83509301be2c786, type: 3}
+  speakerSprite: {fileID: 21300000, guid: 5d8f76321dc05edd08d45f8ba0b7bcf0, type: 3}
