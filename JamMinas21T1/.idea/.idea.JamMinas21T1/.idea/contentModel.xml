@@ -7,6 +7,7 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="BoardManager.cs" t="Include" />
           <e p="ButtonManagement.cs" t="Include" />
           <e p="Constants.cs" t="Include" />
           <e p="Countdown.cs" t="Include" />
@@ -21,12 +22,15 @@
             <e p="Speaker.cs" t="Include" />
             <e p="Tester.cs" t="Include" />
           </e>
+          <e p="DropCar.cs" t="Include" />
           <e p="DropItem.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="Goal.cs" t="Include" />
+          <e p="InventoryCar.cs" t="Include" />
           <e p="InventoryManager.cs" t="Include" />
           <e p="PauseManager.cs" t="Include" />
           <e p="PlayerManager.cs" t="Include" />
+          <e p="RandomGenerator.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
