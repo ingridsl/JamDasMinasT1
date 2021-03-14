@@ -63,7 +63,7 @@ public class Goal : MonoBehaviour
 
         //PROVISORIO : AVALIAR DIFICULDADE
         int playerGold = enemyGold; //PROVISORIO: valor provisorio pegar o dinheiro do player
-        float extraTime = playerGold / enemyGold > 1.5 ? 0 : 10;
+        float extraTime = playerGold / enemyGold > 1.5 ? 0 : 5;
 
         var aux = enemyGold * 1.5f;
         enemyGold = (int)aux;
@@ -75,7 +75,11 @@ public class Goal : MonoBehaviour
         randomStones = randomStones > 10 ? randomStones - 2 : 10;
 
         inventoryCar.CleanCar();
-        //inventoryPlayer.Cleaninventory();
+        moneyCalculator.ResetCalculator();
+
+        inventoryPlayer.CleanInventory();
+        
+
         gameManager.RestartStones(randomStones);
     }
 
