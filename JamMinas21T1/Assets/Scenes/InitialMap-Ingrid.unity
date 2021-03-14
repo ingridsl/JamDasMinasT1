@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641252, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6092,6 +6092,7 @@ MonoBehaviour:
   totalMoney: {fileID: 1250524804}
   goal: {fileID: 2035475349}
   player: {fileID: 856130803}
+  total: 0
 --- !u!1 &1506087946
 GameObject:
   m_ObjectHideFlags: 0
@@ -9532,10 +9533,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ded410fbcf172481391f6724c87a58e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dolerito: {fileID: 21300000, guid: 0113e348378051d428c16e413d28f9c5, type: 3}
-  Granada: {fileID: 21300000, guid: 386810f4b37dbb9429447f8cf8aa7bf8, type: 3}
-  Esmeralda: {fileID: 21300000, guid: 55e649f75184abf45a1042121e8d20eb, type: 3}
-  Turmalina: {fileID: 21300000, guid: 5b04fda5cd5030442a63312a1c7cba94, type: 3}
+  Dolerito: {fileID: -7449167751204825794, guid: 12ba963599f129c4b87e548bbe10849f, type: 3}
+  Granada: {fileID: 7996178857701500007, guid: 12ba963599f129c4b87e548bbe10849f, type: 3}
+  Esmeralda: {fileID: -2161093532670069499, guid: 12ba963599f129c4b87e548bbe10849f, type: 3}
+  Turmalina: {fileID: -1735724445355273477, guid: 12ba963599f129c4b87e548bbe10849f, type: 3}
 --- !u!1 &2121638641
 GameObject:
   m_ObjectHideFlags: 0
