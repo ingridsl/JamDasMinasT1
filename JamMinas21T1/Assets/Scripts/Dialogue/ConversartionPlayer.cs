@@ -17,7 +17,7 @@ public class ConversartionPlayer : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             _tester.StartConvo();
-            Destroy(gameObject);
+            // Destroy(gameObject);
         }
     }
 }
