@@ -25,7 +25,7 @@ public class MoneyCalculator : MonoBehaviour
     public Goal goal = null;
     public PlayerManager player;
 
-    int total = 0;
+    public int total = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +41,19 @@ public class MoneyCalculator : MonoBehaviour
             OpenMoneyCalculator();
             goal.CalculateWinOrLose();
         }
+    }
+    
+    public void ResetCalculator()
+    {
+        total = 0;
+
+        timeIsUp = false;
+        canClose = false;
+
+        moneyDolerito = 0;
+        moneyGranada = 0;
+        moneyEsmeralda = 0;
+        moneyTurmalina = 0;
     }
 
     public void Calculate()
@@ -127,16 +140,18 @@ public class MoneyCalculator : MonoBehaviour
 
     IEnumerator CanClose()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         canClose = true;
     }
 
     IEnumerator AutomaticGoal()
     {
-        yield return new WaitForSeconds(15);
+        yield return new WaitForSeconds(10);
 
-        player.canMove = true;
-        OpenMoneyCalculator();
-        goal.CalculateWinOrLose();
+        if (timeIsUp) {
+            player.canMove = true;
+            OpenMoneyCalculator();
+            goal.CalculateWinOrLose();
+        }
     }
 }

@@ -11,15 +11,19 @@ public class Goal : MonoBehaviour
     int randomStones = Constants.BASIC_RANDOM_STONES;
 
     public bool achieved = false;
-    Countdown contdown = null;
+    public Countdown contdown = null;
 
-    GameManager gameManager = null;
+    public GameManager gameManager = null;
+    public PlayerManager player;
 
     public Text enemyGoldText;
 
     public GameObject victory;
     public GameObject gameover;
     public MoneyCalculator moneyCalculator;
+
+    public InventoryCar inventoryCar;
+    public InventoryManager inventoryPlayer;
 
     // Start is called before the first frame update
     void Start()
@@ -30,10 +34,7 @@ public class Goal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (achieved)
-        {
-            SetGoal();
-        }
+
     }
 
     public void CalculateWinOrLose()
@@ -54,17 +55,30 @@ public class Goal : MonoBehaviour
         }
     }
 
-    void SetGoal()
+    public void SetGoal()
     {
+        //win
+        victory.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        player.canMove = true;
+
         //PROVISORIO : AVALIAR DIFICULDADE
-        enemyGold *= (int) 1.5f;
         int playerGold = enemyGold; //PROVISORIO: valor provisorio pegar o dinheiro do player
-        float extraTime = playerGold / enemyGold > 1.5 ? -10 : 10;
+        float extraTime = playerGold / enemyGold > 1.5 ? 0 : 5;
+
+        var aux = enemyGold * 1.5f;
+        enemyGold = (int)aux;
+        enemyGoldText.text = enemyGold.ToString() + " g";
 
         contdown.startingTime += extraTime;
         contdown.Restart(contdown.startingTime);
 
         randomStones = randomStones > 10 ? randomStones - 2 : 10;
+
+        inventoryCar.CleanCar();
+        moneyCalculator.ResetCalculator();
+
+        inventoryPlayer.CleanInventory();
+        
 
         gameManager.RestartStones(randomStones);
     }

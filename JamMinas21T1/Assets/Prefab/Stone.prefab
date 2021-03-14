@@ -173,8 +173,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oreType: 0
   dropItem:
-  - {fileID: 21300000, guid: 0113e348378051d428c16e413d28f9c5, type: 3}
-  - {fileID: 21300000, guid: 386810f4b37dbb9429447f8cf8aa7bf8, type: 3}
-  - {fileID: 21300000, guid: 55e649f75184abf45a1042121e8d20eb, type: 3}
-  - {fileID: 21300000, guid: 5b04fda5cd5030442a63312a1c7cba94, type: 3}
+  - {fileID: -7449167751204825794, guid: 12ba963599f129c4b87e548bbe10849f, type: 3}
+  - {fileID: 7996178857701500007, guid: 12ba963599f129c4b87e548bbe10849f, type: 3}
+  - {fileID: -2161093532670069499, guid: 12ba963599f129c4b87e548bbe10849f, type: 3}
+  - {fileID: -1735724445355273477, guid: 12ba963599f129c4b87e548bbe10849f, type: 3}
   inventory: {fileID: 0}
