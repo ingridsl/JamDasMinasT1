@@ -111,7 +111,6 @@ public class MoneyCalculator : MonoBehaviour
         else
         {
             child.gameObject.SetActive(true);
-            Time.timeScale = 0;
             timeIsUp = true;
             Calculate();
 
@@ -123,5 +122,6 @@ public class MoneyCalculator : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         canClose = true;
+        Time.timeScale = 0;
     }
 }
