@@ -3062,6 +3062,7 @@ MonoBehaviour:
   startingTime: 50
   countDownText: {fileID: 1390129600}
   gameOverObject: {fileID: 0}
+  moneyCalculator: {fileID: 0}
 --- !u!114 &1099039353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4138,6 +4139,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ded410fbcf172481391f6724c87a58e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Dolerito: {fileID: 0}
+  Granada: {fileID: 0}
+  Esmeralda: {fileID: 0}
+  Turmalina: {fileID: 0}
 --- !u!1 &1377684836
 GameObject:
   m_ObjectHideFlags: 0
@@ -4198,7 +4203,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2200756, y: 0.070075035}
+  m_Offset: {x: 0.2200756, y: 0.19316375}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4209,7 +4214,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.0444698, y: 2.6796808}
+  m_Size: {x: 2.0444698, y: 2.4335034}
   m_EdgeRadius: 0
 --- !u!61 &1377684840
 BoxCollider2D:
