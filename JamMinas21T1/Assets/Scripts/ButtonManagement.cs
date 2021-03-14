@@ -42,4 +42,5 @@ public class ButtonManagement : MonoBehaviour
     {
         pauseManager.OpenClosePause();
     }
+    
 }
