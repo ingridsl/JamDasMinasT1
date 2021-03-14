@@ -24,8 +24,11 @@ public class DropCar : MonoBehaviour
         {   
             if (Input.GetMouseButtonDown(0))
             {   
-                //InventoryManager.RemoveObject();
-                inventory.ReceiveObject(InventoryManager.RemoveObject());                
+                var aux = InventoryManager.RemoveObject();;
+                if (aux != null){
+                    inventory.ReceiveObject(aux);
+                }
+                                
             }
         }
     }
