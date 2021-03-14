@@ -6,8 +6,16 @@ using UnityEngine.UI;
 
 public static class Constants
 {
-    public static readonly float BASIC_COUNTDOWN_TIME = 50f;
+    public static readonly float BASIC_COUNTDOWN_TIME = 10f;
     public static readonly int BASIC_ENEMY_GOLD = 1000;
     public static readonly int BASIC_RANDOM_STONES = 20;
+
+    public enum Ore
+    {
+        Dolerito,
+        Granada,
+        Esmeralda,
+        Turmalina
+    };
 
 }

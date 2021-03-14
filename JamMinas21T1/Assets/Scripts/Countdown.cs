@@ -11,6 +11,10 @@ public class Countdown : MonoBehaviour
     [SerializeField] Text countDownText;
     public GameObject gameOverObject = null;
 
+    public MoneyCalculator moneyCalculator = null;
+
+    bool timeIsUp = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +28,13 @@ public class Countdown : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        if (!timeIsUp) {
+            CountDownTime();
+        }
+    }
+
+    void CountDownTime()
     {
         currentTime -= 1 * Time.deltaTime;
         countDownText.text = currentTime.ToString("0");
@@ -40,8 +51,10 @@ public class Countdown : MonoBehaviour
 
         if (currentTime <= 0)
         {
+            timeIsUp = true;
             countDownText.fontSize = 50;
             currentTime = 0;
+            moneyCalculator.OpenMoneyCalculator();
             //gameOverObject.SetActive(true);
         }
     }
