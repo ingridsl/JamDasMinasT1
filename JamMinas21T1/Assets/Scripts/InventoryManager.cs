@@ -84,7 +84,7 @@ public class InventoryManager : MonoBehaviour
                     {  
                         aux =  obj1;
                         obj1 = null;
-                        aux = child.gameObject.GetComponent<Image>().sprite = null;
+                        child.gameObject.GetComponent<Image>().sprite = null;
                     }
                     break;
                 case 2:
@@ -92,13 +92,13 @@ public class InventoryManager : MonoBehaviour
                     {   
                         aux = obj1;
                         obj1 = obj2;
-                        aux = child.gameObject.GetComponent<Image>().sprite = obj2;
+                        child.gameObject.GetComponent<Image>().sprite = obj2;
                     }
                     if (child.gameObject.name == "Obj2")
                     {
                         //aux = obj2;
                         obj2 = null;
-                        aux = child.gameObject.GetComponent<Image>().sprite = null;
+                        child.gameObject.GetComponent<Image>().sprite = null;
                     }
                     break;
                 case 3:
@@ -106,19 +106,19 @@ public class InventoryManager : MonoBehaviour
                     {   
                         aux = obj1;
                         obj1 = obj2;
-                        aux = child.gameObject.GetComponent<Image>().sprite = obj2;
+                        child.gameObject.GetComponent<Image>().sprite = obj2;
                     }
                     if (child.gameObject.name == "Obj2")
                     {   
                         //aux = obj2;
                         obj2 = obj3;
-                        aux = child.gameObject.GetComponent<Image>().sprite = obj3;
+                        child.gameObject.GetComponent<Image>().sprite = obj3;
                     }
                     if (child.gameObject.name == "Obj3")
                     {   
                         //aux = obj3;
                         obj3 = null;
-                        aux = child.gameObject.GetComponent<Image>().sprite = null;
+                        child.gameObject.GetComponent<Image>().sprite = null;
                     }
                     break;
                 case 4:
@@ -127,19 +127,19 @@ public class InventoryManager : MonoBehaviour
                     {   
                         aux = obj1;
                         obj1 = obj2;
-                        aux = child.gameObject.GetComponent<Image>().sprite = obj2;
+                        child.gameObject.GetComponent<Image>().sprite = obj2;
                     }
                     if (child.gameObject.name == "Obj2")
                     {   
                         //aux = obj2;
                         obj2 = obj3;
-                        aux = child.gameObject.GetComponent<Image>().sprite = obj3;
+                        child.gameObject.GetComponent<Image>().sprite = obj3;
                     }
                     if (child.gameObject.name == "Obj3")
                     {   
                         //aux = obj3;
                         obj3 = obj4;
-                        aux = child.gameObject.GetComponent<Image>().sprite = obj4;
+                        child.gameObject.GetComponent<Image>().sprite = obj4;
                     }
                     if (child.gameObject.name == "Obj4")
                     {   
