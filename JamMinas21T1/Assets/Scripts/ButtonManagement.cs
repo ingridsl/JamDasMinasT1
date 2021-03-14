@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class ButtonManagement : MonoBehaviour
 {
     public PauseManager pauseManager = null;
+    public Goal goal = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,16 @@ public class ButtonManagement : MonoBehaviour
 
     public void HarderGame()
     {
-
+        if(goal == null)
+        {
+            var goals = GameObject.FindGameObjectsWithTag("Goal");
+            foreach (var goal in goals)
+            {
+                goal.GetComponent<Goal>().SetGoal();
+                return;
+            }
+        }
+        goal.SetGoal();
     }
 
     public void ReloadScene()
