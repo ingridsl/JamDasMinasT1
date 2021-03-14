@@ -19,6 +19,7 @@ public class PlayerManager : MonoBehaviour
     void Update()
     {
         Movement();
+        ActivateMiningAnim();
     }
 
     void Movement()
@@ -39,5 +40,13 @@ public class PlayerManager : MonoBehaviour
         animator.SetFloat("Vertical", moveInput.y);
         animator.SetFloat("Speed", moveInput.magnitude);
         transform.position += moveInput * moveSpeed * Time.deltaTime;
+    }
+
+    public void ActivateMiningAnim()
+    {
+        Vector3 mousePos = Input.mousePosition;
+        animator.SetBool("Click", Input.GetMouseButtonDown(0));
+        animator.SetFloat("MouseX", mousePos.x);
+        animator.SetFloat("MouseY", mousePos.y);
     }
 }
