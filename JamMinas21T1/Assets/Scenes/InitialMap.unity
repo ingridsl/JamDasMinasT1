@@ -1285,7 +1285,7 @@ GameObject:
   - component: {fileID: 201197035}
   - component: {fileID: 201197034}
   m_Layer: 5
-  m_Name: Image
+  m_Name: DOLERITO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1301,14 +1301,15 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 865903610}
-  m_RootOrder: 0
+  m_Children:
+  - {fileID: 1221632802}
+  m_Father: {fileID: 1173644592}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -391.99112, y: -153.22925}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0.07341336, y: 0.46500003}
+  m_AnchorMax: {x: 0.07341336, y: 0.46500003}
+  m_AnchoredPosition: {x: 26.02655, y: -25.522888}
+  m_SizeDelta: {x: 49.80078, y: 49.384186}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &201197034
 MonoBehaviour:
@@ -3003,12 +3004,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 865903610}
-  m_RootOrder: 7
+  m_Father: {fileID: 1705683162}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -196.01767, y: -392.0534}
+  m_AnchoredPosition: {x: 195.97345, y: -19.188904}
   m_SizeDelta: {x: 324.1944, y: 38.0114}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &617784396
@@ -3044,7 +3045,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Granada - 2 gold / unidade
+  m_Text: Granada - 2 gold / unid.
 --- !u!222 &617784397
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4046,16 +4047,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 201197033}
-  - {fileID: 1705683162}
-  - {fileID: 1730239482}
-  - {fileID: 1912080160}
-  - {fileID: 1221632802}
-  - {fileID: 1150300071}
-  - {fileID: 1468470499}
-  - {fileID: 617784395}
-  - {fileID: 2023204486}
+  m_Children: []
   m_Father: {fileID: 1173644592}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5557,12 +5549,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 865903610}
-  m_RootOrder: 5
+  m_Father: {fileID: 1730239482}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 225.98236, y: -273.2341}
+  m_AnchoredPosition: {x: 199, y: -17.174255}
   m_SizeDelta: {x: 324.1944, y: 38.0114}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1150300072
@@ -5598,7 +5590,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Esmeralda - 4 gold / unidade
+  m_Text: Esmeralda - 4 gold / unid.
 --- !u!222 &1150300073
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5753,6 +5745,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 865903610}
+  - {fileID: 201197033}
+  - {fileID: 1705683162}
+  - {fileID: 1730239482}
+  - {fileID: 1912080160}
+  - {fileID: 2023204486}
   m_Father: {fileID: 286939950}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5828,12 +5825,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 865903610}
-  m_RootOrder: 4
+  m_Father: {fileID: 201197033}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -190.7018, y: -273.2341}
+  m_AnchoredPosition: {x: 201.34471, y: -16.742157}
   m_SizeDelta: {x: 324.1944, y: 38.0114}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1221632803
@@ -5869,7 +5866,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Dolerito - 1 gold / unidade
+  m_Text: Dolerito - 1 gold / unid.
 --- !u!222 &1221632804
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6921,12 +6918,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 865903610}
-  m_RootOrder: 6
+  m_Father: {fileID: 1912080160}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 225.98236, y: -392.0534}
+  m_AnchoredPosition: {x: 199, y: -19.188904}
   m_SizeDelta: {x: 324.1944, y: 38.0114}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1468470500
@@ -6962,7 +6959,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Turmalina - 10 gold / unidade
+  m_Text: Turmalina - 10 gold / unid.
 --- !u!222 &1468470501
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8468,7 +8465,7 @@ GameObject:
   - component: {fileID: 1705683164}
   - component: {fileID: 1705683163}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: GRANADA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8484,13 +8481,14 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 865903610}
-  m_RootOrder: 1
+  m_Children:
+  - {fileID: 617784395}
+  m_Father: {fileID: 1173644592}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -391.99112, y: -270.0338}
+  m_AnchorMin: {x: 0.06425161, y: 0.26517668}
+  m_AnchorMax: {x: 0.06425161, y: 0.26517668}
+  m_AnchoredPosition: {x: 35.02655, y: -28.999985}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1705683163
@@ -8543,7 +8541,7 @@ GameObject:
   - component: {fileID: 1730239484}
   - component: {fileID: 1730239483}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: ESMERALDA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8559,13 +8557,14 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 865903610}
-  m_RootOrder: 2
+  m_Children:
+  - {fileID: 1150300071}
+  m_Father: {fileID: 1173644592}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 26.98236, y: -153.22925}
+  m_AnchorMin: {x: 0.5, y: 0.46500003}
+  m_AnchorMax: {x: 0.5, y: 0.46500003}
+  m_AnchoredPosition: {x: 26.000061, y: -25.195435}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1730239483
@@ -9734,7 +9733,7 @@ GameObject:
   - component: {fileID: 1912080162}
   - component: {fileID: 1912080161}
   m_Layer: 5
-  m_Name: Image (3)
+  m_Name: TURMALINA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9750,13 +9749,14 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 865903610}
-  m_RootOrder: 3
+  m_Children:
+  - {fileID: 1468470499}
+  m_Father: {fileID: 1173644592}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 26.98236, y: -270.0338}
+  m_AnchorMin: {x: 0.5, y: 0.26517668}
+  m_AnchorMax: {x: 0.5, y: 0.26517668}
+  m_AnchoredPosition: {x: 26.000061, y: -28.999985}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1912080161
@@ -10114,12 +10114,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 865903610}
-  m_RootOrder: 8
+  m_Father: {fileID: 1173644592}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -170.01764, y: -195.0534}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 165, y: 65}
   m_SizeDelta: {x: 324.1944, y: 38.0114}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2023204487
