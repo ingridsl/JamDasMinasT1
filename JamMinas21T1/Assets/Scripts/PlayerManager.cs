@@ -14,6 +14,8 @@ public class PlayerManager : MonoBehaviour
     public float testmousex = 0;
     public float testmousey = 0;
 
+    public bool canMove = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +25,10 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movement();
-        ActivateMiningAnim();
+        if (canMove) {
+            Movement();
+            ActivateMiningAnim();
+        }
 
         Vector3 mousePos = Input.mousePosition;
         testmousex = mousePos.x;

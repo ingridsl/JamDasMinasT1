@@ -22,6 +22,11 @@ public class MoneyCalculator : MonoBehaviour
     int moneyEsmeralda = 0;
     int moneyTurmalina = 0;
 
+    public Goal goal = null;
+    public PlayerManager player;
+
+    int total = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +39,7 @@ public class MoneyCalculator : MonoBehaviour
         if (timeIsUp && canClose &&(Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.Space) ) )
         {
             OpenMoneyCalculator();
+            goal.CalculateWinOrLose();
         }
     }
 
@@ -68,7 +74,7 @@ public class MoneyCalculator : MonoBehaviour
                     break;
             }
         }
-        var total = moneyDolerito + moneyGranada + moneyEsmeralda + moneyTurmalina;
+        total = moneyDolerito + moneyGranada + moneyEsmeralda + moneyTurmalina;
         totalMoney.text = total + " gold";
     }
 
@@ -101,6 +107,7 @@ public class MoneyCalculator : MonoBehaviour
 
     public void OpenMoneyCalculator()
     {
+        player.canMove = false;
         var child = this.transform.GetChild(0);
         if (child.gameObject.activeSelf)
         {
@@ -113,8 +120,8 @@ public class MoneyCalculator : MonoBehaviour
             child.gameObject.SetActive(true);
             timeIsUp = true;
             Calculate();
-
             StartCoroutine(CanClose());
+            StartCoroutine(AutomaticGoal());
         }
     }
 
@@ -122,6 +129,14 @@ public class MoneyCalculator : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         canClose = true;
-        Time.timeScale = 0;
+    }
+
+    IEnumerator AutomaticGoal()
+    {
+        yield return new WaitForSeconds(15);
+
+        player.canMove = true;
+        OpenMoneyCalculator();
+        goal.CalculateWinOrLose();
     }
 }

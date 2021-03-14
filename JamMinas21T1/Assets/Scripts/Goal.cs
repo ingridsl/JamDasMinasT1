@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Goal : MonoBehaviour
 {
@@ -12,6 +14,12 @@ public class Goal : MonoBehaviour
     Countdown contdown = null;
 
     GameManager gameManager = null;
+
+    public Text enemyGoldText;
+
+    public GameObject victory;
+    public GameObject gameover;
+    public MoneyCalculator moneyCalculator;
 
     // Start is called before the first frame update
     void Start()
@@ -25,8 +33,24 @@ public class Goal : MonoBehaviour
         if (achieved)
         {
             SetGoal();
+        }        
+    }
+
+    public void CalculateWinOrLose()
+    {
+
+        string valueText = Regex.Replace(enemyGoldText.text, "[^0-9]", "");
+
+        if (int.Parse(moneyCalculator.totalMoney.text) < int.Parse(valueText))
+        {
+            //gameover
+            gameover.SetActive(false);
         }
-        
+        else
+        {
+            //win
+            victory.SetActive(true);
+        }
     }
 
     void SetGoal()
