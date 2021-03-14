@@ -70,90 +70,95 @@ public class InventoryManager : MonoBehaviour
         //PROVISORIO: por enquanto, retirar na ordem q colocou. depois, poder retirar qualquer um
         var canvas = transform.GetChild(0);
         var panel = canvas.GetChild(0);
-        
-        foreach (Transform child in panel.transform)
-        {   
-            switch (inventoryAmout)
-            {
-                case 0:
-                    //N�o entra nesse caso
-                    aux = null;
-                    break;
-                case 1:
-                    if (child.gameObject.name == "Obj1")
-                    {  
-                        aux =  obj1;
-                        obj1 = null;
-                        child.gameObject.GetComponent<Image>().sprite = null;
-                    }
-                    break;
-                case 2:
-                    if (child.gameObject.name == "Obj1")
-                    {   
-                        aux = obj1;
-                        obj1 = obj2;
-                        child.gameObject.GetComponent<Image>().sprite = obj2;
-                    }
-                    if (child.gameObject.name == "Obj2")
-                    {
-                        //aux = obj2;
-                        obj2 = null;
-                        child.gameObject.GetComponent<Image>().sprite = null;
-                    }
-                    break;
-                case 3:
-                    if (child.gameObject.name == "Obj1")
-                    {   
-                        aux = obj1;
-                        obj1 = obj2;
-                        child.gameObject.GetComponent<Image>().sprite = obj2;
-                    }
-                    if (child.gameObject.name == "Obj2")
-                    {   
-                        //aux = obj2;
-                        obj2 = obj3;
-                        child.gameObject.GetComponent<Image>().sprite = obj3;
-                    }
-                    if (child.gameObject.name == "Obj3")
-                    {   
-                        //aux = obj3;
-                        obj3 = null;
-                        child.gameObject.GetComponent<Image>().sprite = null;
-                    }
-                    break;
-                case 4:
-                    inventoryFull = false;
-                    if (child.gameObject.name == "Obj1")
-                    {   
-                        aux = obj1;
-                        obj1 = obj2;
-                        child.gameObject.GetComponent<Image>().sprite = obj2;
-                    }
-                    if (child.gameObject.name == "Obj2")
-                    {   
-                        //aux = obj2;
-                        obj2 = obj3;
-                        child.gameObject.GetComponent<Image>().sprite = obj3;
-                    }
-                    if (child.gameObject.name == "Obj3")
-                    {   
-                        //aux = obj3;
-                        obj3 = obj4;
-                        child.gameObject.GetComponent<Image>().sprite = obj4;
-                    }
-                    if (child.gameObject.name == "Obj4")
-                    {   
-                        //aux = obj4;
-                        obj4 = null;
-                        child.gameObject.GetComponent<Image>().sprite = null;
-                    }
-                    break;
+        if(inventoryAmout != 0){
+            foreach (Transform child in panel.transform)
+            {   
+                switch (inventoryAmout)
+                {
+                    case 0:
+                        //N�o entra nesse caso
+                        aux = null;
+                        break;
+                    case 1:
+                        if (child.gameObject.name == "Obj1")
+                        {  
+                            aux =  obj1;
+                            obj1 = null;
+                            child.gameObject.GetComponent<Image>().sprite = null;
+                        }
+                        break;
+                    case 2:
+                        if (child.gameObject.name == "Obj1")
+                        {   
+                            aux = obj1;
+                            obj1 = obj2;
+                            child.gameObject.GetComponent<Image>().sprite = obj2;
+                        }
+                        if (child.gameObject.name == "Obj2")
+                        {
+                            //aux = obj2;
+                            obj2 = null;
+                            child.gameObject.GetComponent<Image>().sprite = null;
+                        }
+                        break;
+                    case 3:
+                        if (child.gameObject.name == "Obj1")
+                        {   
+                            aux = obj1;
+                            obj1 = obj2;
+                            child.gameObject.GetComponent<Image>().sprite = obj2;
+                        }
+                        if (child.gameObject.name == "Obj2")
+                        {   
+                            //aux = obj2;
+                            obj2 = obj3;
+                            child.gameObject.GetComponent<Image>().sprite = obj3;
+                        }
+                        if (child.gameObject.name == "Obj3")
+                        {   
+                            //aux = obj3;
+                            obj3 = null;
+                            child.gameObject.GetComponent<Image>().sprite = null;
+                        }
+                        break;
+                    case 4:
+                        inventoryFull = false;
+                        if (child.gameObject.name == "Obj1")
+                        {   
+                            aux = obj1;
+                            obj1 = obj2;
+                            child.gameObject.GetComponent<Image>().sprite = obj2;
+                        }
+                        if (child.gameObject.name == "Obj2")
+                        {   
+                            //aux = obj2;
+                            obj2 = obj3;
+                            child.gameObject.GetComponent<Image>().sprite = obj3;
+                        }
+                        if (child.gameObject.name == "Obj3")
+                        {   
+                            //aux = obj3;
+                            obj3 = obj4;
+                            child.gameObject.GetComponent<Image>().sprite = obj4;
+                        }
+                        if (child.gameObject.name == "Obj4")
+                        {   
+                            //aux = obj4;
+                            obj4 = null;
+                            child.gameObject.GetComponent<Image>().sprite = null;
+                        }
+                        break;
+                }
+                
             }
             
-        }
-        
-        inventoryAmout--;
-        return aux;
+                inventoryAmout--;
+                return aux;
+            }
+            else{
+                return null;
+            }
+       
         
     }
 
