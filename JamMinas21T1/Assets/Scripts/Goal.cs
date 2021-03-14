@@ -33,23 +33,24 @@ public class Goal : MonoBehaviour
         if (achieved)
         {
             SetGoal();
-        }        
+        }
     }
 
     public void CalculateWinOrLose()
     {
 
-        string valueText = Regex.Replace(enemyGoldText.text, "[^0-9]", "");
+        string enemyGold = Regex.Replace(enemyGoldText.text, "[^0-9]", "");
+        string playerGold = Regex.Replace(moneyCalculator.totalMoney.text, "[^0-9]", "");
 
-        if (int.Parse(moneyCalculator.totalMoney.text) < int.Parse(valueText))
+        if (int.Parse(playerGold) < int.Parse(enemyGold))
         {
             //gameover
-            gameover.SetActive(false);
+            gameover.gameObject.transform.GetChild(0).gameObject.SetActive(true);
         }
         else
         {
             //win
-            victory.SetActive(true);
+            victory.gameObject.transform.GetChild(0).gameObject.SetActive(true);
         }
     }
 
