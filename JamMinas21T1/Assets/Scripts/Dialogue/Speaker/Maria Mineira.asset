@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Maria Mineira
   m_EditorClassIdentifier: 
   speakerName: Maria Mineira
-  speakerSprite: {fileID: 21300000, guid: 16e6fa05d0af8de47b916d35892715ba, type: 3}
+  speakerSprite: {fileID: 21300000, guid: 44bf4c3d3ea188c04bd7c8e009925b9d, type: 3}
