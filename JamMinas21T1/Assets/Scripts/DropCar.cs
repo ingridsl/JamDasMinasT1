@@ -23,19 +23,7 @@ public class DropCar : MonoBehaviour
 
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Player")
-        {
-            isInside = true;
-            if (Input.GetMouseButtonDown(0))
-            {
-                OnTriggerGeneral(other);
-            }
-        }
-    }
-
+    
     private void OnTriggerGeneral(Collider2D other)
     {
 
@@ -45,15 +33,7 @@ public class DropCar : MonoBehaviour
             inventory.ReceiveObject(aux);
         }
     }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.tag == "Player")
-        {
-            isInside = false;
-        }
-    }
-
+    
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.tag == "Player")
