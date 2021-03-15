@@ -8,6 +8,7 @@ public class DropItem : MonoBehaviour
     public int oreType;
     public Sprite[] dropItem;
     bool isInside = false;
+    bool isBroken = false;
 
     public AudioSource audio;
 
@@ -78,10 +79,11 @@ public class DropItem : MonoBehaviour
         playerManager.isHitingOre = true;
         playerManager.ActivateMiningAnim();
 
-        if (this.GetComponent<SpriteRenderer>().sprite != dropItem[(int)oreType])
+        if (!isBroken)
         {
             audio.Play();
             this.GetComponent<SpriteRenderer>().sprite = dropItem[(int)oreType];
+            isBroken = true;
         }
         else
         {
