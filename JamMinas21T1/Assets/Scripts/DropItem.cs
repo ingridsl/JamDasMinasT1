@@ -9,6 +9,8 @@ public class DropItem : MonoBehaviour
     public Sprite[] dropItem;
     bool isInside = false;
 
+    public AudioSource audio;
+
     public InventoryManager inventory = null;
     // Start is called before the first frame update
     void Start()
@@ -78,8 +80,8 @@ public class DropItem : MonoBehaviour
 
         if (this.GetComponent<SpriteRenderer>().sprite != dropItem[(int)oreType])
         {
+            audio.Play();
             this.GetComponent<SpriteRenderer>().sprite = dropItem[(int)oreType];
-
         }
         else
         {

@@ -5192,9 +5192,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 61242834}
     m_Modifications:
-    - target: {fileID: 921724150523646485, guid: d6a949ec116d3874ca6b5378e487fed1, type: 3}
-      propertyPath: inventory
-      value: 
+    - target: {fileID: 1075977571, guid: d6a949ec116d3874ca6b5378e487fed1, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 921724150523646486, guid: d6a949ec116d3874ca6b5378e487fed1, type: 3}
+      propertyPath: m_Size.x
+      value: 0.24546933
+      objectReference: {fileID: 0}
+    - target: {fileID: 921724150523646486, guid: d6a949ec116d3874ca6b5378e487fed1, type: 3}
+      propertyPath: m_Size.y
+      value: 0.23237035
+      objectReference: {fileID: 0}
+    - target: {fileID: 921724150523646486, guid: d6a949ec116d3874ca6b5378e487fed1, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.001410678
+      objectReference: {fileID: 0}
+    - target: {fileID: 921724150523646486, guid: d6a949ec116d3874ca6b5378e487fed1, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.010861307
       objectReference: {fileID: 0}
     - target: {fileID: 921724150523646487, guid: d6a949ec116d3874ca6b5378e487fed1, type: 3}
       propertyPath: m_RootOrder
@@ -5247,7 +5263,7 @@ PrefabInstance:
     - target: {fileID: 8294195312597223164, guid: d6a949ec116d3874ca6b5378e487fed1, type: 3}
       propertyPath: inventory
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1339923757}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6a949ec116d3874ca6b5378e487fed1, type: 3}
 --- !u!4 &1075977569 stripped
