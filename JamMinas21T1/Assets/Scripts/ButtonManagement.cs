@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class ButtonManagement : MonoBehaviour
 {
     public PauseManager pauseManager = null;
+    public GameObject panel = null;
     public Goal goal = null;
     // Start is called before the first frame update
     void Start()
@@ -43,4 +44,16 @@ public class ButtonManagement : MonoBehaviour
         pauseManager.OpenClosePause();
     }
     
+    public void OpenClosePanel()
+    {
+        var panelCanvas = panel.transform.GetChild(0);
+        if (panelCanvas.gameObject.activeSelf)
+        {
+            panelCanvas.gameObject.SetActive(false);
+        }
+        else
+        {
+            panelCanvas.gameObject.SetActive(true);
+        }
+    }
 }

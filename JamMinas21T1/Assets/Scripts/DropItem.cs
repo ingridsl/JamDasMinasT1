@@ -7,7 +7,9 @@ public class DropItem : MonoBehaviour
 
     public int oreType;
     public Sprite[] dropItem;
-    bool isInside = false;
+    bool isBroken = false;
+
+    public AudioSource audio;
 
     public InventoryManager inventory = null;
     // Start is called before the first frame update
@@ -47,47 +49,47 @@ public class DropItem : MonoBehaviour
         }
     }
 
-
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerGeneral(Collider2D other)
     {
-        if (other.tag == "Player")
+        var playerManager = other.transform.GetComponent<PlayerManager>();
+        if (Input.GetMouseButtonDown(0))
         {
-            isInside = true;
-            if (Input.GetMouseButtonDown(0))
+            if (!isBroken)
             {
-                OnTriggerGeneral(other);
+                playerManager.isHitingOre = true;
+                playerManager.ActivateMiningAnim();
+
+                audio.Play();
+
+                this.GetComponent<SpriteRenderer>().sprite = dropItem[(int)oreType];
+                isBroken = true;
+                StartCoroutine(ForceClickFalse(playerManager));
+            }
+            else
+            {
+                if (!inventory.inventoryFull)
+                {
+                    inventory.ReceiveObject(dropItem[(int)oreType]);
+                    Destroy(this.gameObject);
+                    playerManager.isHitingOre = false;
+                }
             }
         }
-    }   
+    }
+
+    IEnumerator ForceClickFalse(PlayerManager playerManager)
+    {
+        yield return new WaitForSeconds(1);
+        playerManager.isHitingOre = false;
+        playerManager.ActivateMiningAnim();
+    }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-            isInside = false;
             var playerManager = other.transform.GetComponent<PlayerManager>();
             playerManager.isHitingOre = false;
-        }
-    }
-
-    private void OnTriggerGeneral(Collider2D other)
-    {
-        var playerManager = other.transform.GetComponent<PlayerManager>();
-        playerManager.isHitingOre = true;
-        playerManager.ActivateMiningAnim();
-
-        if (this.GetComponent<SpriteRenderer>().sprite != dropItem[(int)oreType])
-        {
-            this.GetComponent<SpriteRenderer>().sprite = dropItem[(int)oreType];
-
-        }
-        else
-        {
-            if (!inventory.inventoryFull)
-            {
-                inventory.ReceiveObject(dropItem[(int)oreType]);
-                Destroy(this.gameObject);
-            }
         }
     }
 
@@ -95,10 +97,7 @@ public class DropItem : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                OnTriggerGeneral(other);
-            }
+            OnTriggerGeneral(other);
         }
     }
 }
