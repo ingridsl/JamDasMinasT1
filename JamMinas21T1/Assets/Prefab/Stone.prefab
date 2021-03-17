@@ -173,13 +173,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oreType: 0
+  originalStone: {fileID: 5140113030604570477, guid: c619ef2dd18cd2c4ebee468bf027b5e8, type: 3}
   dropItem:
   - {fileID: -7449167751204825794, guid: 12ba963599f129c4b87e548bbe10849f, type: 3}
   - {fileID: 7996178857701500007, guid: 12ba963599f129c4b87e548bbe10849f, type: 3}
   - {fileID: -2161093532670069499, guid: 12ba963599f129c4b87e548bbe10849f, type: 3}
   - {fileID: -1735724445355273477, guid: 12ba963599f129c4b87e548bbe10849f, type: 3}
-  audio: {fileID: 1075977571}
+  isBroken: 0
+  hitAudio: {fileID: 1075977571}
   inventory: {fileID: 0}
+  inventoryFullHUD: {fileID: 0}
 --- !u!82 &1075977571
 AudioSource:
   m_ObjectHideFlags: 0

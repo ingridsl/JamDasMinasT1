@@ -27,12 +27,18 @@ public class InventoryManager : MonoBehaviour
 
     public void CleanInventory()
     {
-        inventoryAmout = 0;
+
+        RemoveObject();
+        RemoveObject();
+        RemoveObject();
+        RemoveObject();
+
         obj1 = null;
         obj2 = null;
         obj3 = null;
         obj4 = null;
         aux = null;
+
         inventoryFull = false;
     }
 
@@ -45,7 +51,8 @@ public class InventoryManager : MonoBehaviour
             switch (inventoryAmout)
             {
                 case 0:
-                    //N�o entra nesse caso
+                    inventoryFull = false;
+                    //Inventário já está vazio
                     break;
                 case 1:
                     if (child.gameObject.name == "Obj1" && obj1 != null)

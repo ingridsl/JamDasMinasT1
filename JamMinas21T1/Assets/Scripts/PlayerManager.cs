@@ -16,6 +16,7 @@ public class PlayerManager : MonoBehaviour
     public float testmousey = 0;
 
     public bool canMove = true;
+    bool click = false;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,10 @@ public class PlayerManager : MonoBehaviour
         if (canMove)
         {
             Movement();
-            ActivateMiningAnim();
+            //if (!isHitingOre && click)
+            //{
+            //    ActivateMiningAnim(false);
+            //}
         }
 
         Vector3 mousePos = Input.mousePosition;
@@ -57,13 +61,26 @@ public class PlayerManager : MonoBehaviour
         transform.position += moveInput * moveSpeed * Time.deltaTime;
     }
 
-    public void ActivateMiningAnim()
+    public void ActivateMiningAnim(bool thisClick)
     {
         Vector3 mousePos = Input.mousePosition;
         var playerPosition = Camera.main.WorldToScreenPoint(transform.position);
 
-        animator.SetBool("Click", isHitingOre);
+        click = thisClick;
+        animator.SetBool("Click", click);
+        if (click)
+        {
+            click = false;
+            StartCoroutine(ForceClickFalse(0.7f));
+        }
         animator.SetFloat("MouseX", mousePos.x - playerPosition.x);
-        animator.SetFloat("MouseY", mousePos.y - playerPosition.y);        
+        animator.SetFloat("MouseY", mousePos.y - playerPosition.y);
+    }
+
+    public IEnumerator ForceClickFalse(float waitSeconds)
+    {
+        yield return new WaitForSeconds(waitSeconds);
+        isHitingOre = false;
+        ActivateMiningAnim(false);
     }
 }

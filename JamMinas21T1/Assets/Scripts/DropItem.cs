@@ -6,13 +6,19 @@ public class DropItem : MonoBehaviour
 {
 
     public int oreType;
-    public Sprite[] dropItem;
-    bool isBroken = false;
 
-    public AudioSource audio;
+    public Sprite originalStone;
+
+    public Sprite[] dropItem;
+    public bool isBroken = false;
+
+    public AudioSource hitAudio;
 
     public InventoryManager inventory = null;
     public GameObject inventoryFullHUD;
+
+    bool isInside = false;
+    PlayerManager playerManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +36,15 @@ public class DropItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isInside && Input.GetMouseButtonDown(0) && playerManager != null)
+        {
+            BreakGetOre();
+        }
+    }
 
+    public void ResetSprite()
+    {
+        this.GetComponent<SpriteRenderer>().sprite = originalStone;
     }
 
     void ChooseOreType()
@@ -54,35 +68,38 @@ public class DropItem : MonoBehaviour
         }
     }
 
-    private void OnTriggerGeneral(Collider2D other)
+    private void BreakGetOre()
     {
-        var playerManager = other.transform.GetComponent<PlayerManager>();
         if (Input.GetMouseButtonDown(0))
         {
-            if (!isBroken)
+            if (!this.isBroken)
             {
                 playerManager.isHitingOre = true;
-                playerManager.ActivateMiningAnim();
+                playerManager.ActivateMiningAnim(true);
 
-                audio.Play();
+                hitAudio.Play();
 
                 this.GetComponent<SpriteRenderer>().sprite = dropItem[(int)oreType];
+                StartCoroutine(ForceClickFalse(playerManager, 0.7f));
                 isBroken = true;
-                StartCoroutine(ForceClickFalse(playerManager));
             }
             else
             {
                 if (!inventory.inventoryFull)
                 {
                     inventory.ReceiveObject(dropItem[(int)oreType]);
-                    Destroy(this.gameObject);
-                    playerManager.isHitingOre = false;
+                    //StartCoroutine(playerManager.ForceClickFalse(0.5f));
+                    //playerManager.isHitingOre = false;
+
+                    //playerManager.ActivateMiningAnim(false);
+                    this.gameObject.SetActive(false);
                 }
                 else
                 {
                     var inventoryFullPanel = inventoryFullHUD.transform.GetChild(0);
-                    inventoryFullPanel.gameObject.SetActive(true);
                     StartCoroutine(CloseInventoryFullHUD(inventoryFullPanel.gameObject));
+                    StartCoroutine(ForceClickFalse(playerManager, 0.5f));
+                    inventoryFullPanel.gameObject.SetActive(true);
                 }
             }
         }
@@ -94,27 +111,30 @@ public class DropItem : MonoBehaviour
         inventoryFullPanel.SetActive(false);
     }
 
-    IEnumerator ForceClickFalse(PlayerManager playerManager)
+    IEnumerator ForceClickFalse(PlayerManager playerManager, float waitSeconds)
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(waitSeconds);
         playerManager.isHitingOre = false;
-        playerManager.ActivateMiningAnim();
+        playerManager.ActivateMiningAnim(false);
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
+            isInside = false;
             var playerManager = other.transform.GetComponent<PlayerManager>();
             playerManager.isHitingOre = false;
         }
     }
 
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-            OnTriggerGeneral(other);
+            isInside = true;
+            playerManager = other.transform.GetComponent<PlayerManager>();
+            //OnTriggerGeneral(other);
         }
     }
 }
