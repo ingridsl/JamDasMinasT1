@@ -62,7 +62,7 @@ public class Goal : MonoBehaviour
         player.canMove = true;
 
         //PROVISORIO : AVALIAR DIFICULDADE
-        int playerGold = enemyGold; //PROVISORIO: valor provisorio pegar o dinheiro do player
+        int playerGold = enemyGold;
         float extraTime = playerGold / enemyGold > 1.5 ? 0 : 5;
 
         var aux = enemyGold * 1.5f;

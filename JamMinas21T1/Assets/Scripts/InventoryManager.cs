@@ -77,8 +77,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     public Sprite RemoveObject()
-    {
-        //PROVISORIO: por enquanto, retirar na ordem q colocou. depois, poder retirar qualquer um
+    {        
         var canvas = transform.GetChild(0);
         var panel = canvas.GetChild(0);
         if (inventoryAmout != 0)
