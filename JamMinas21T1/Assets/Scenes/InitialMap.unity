@@ -8130,7 +8130,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a250e7cc664aa65fa99a30cc24fedf13, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -9281,6 +9281,7 @@ MonoBehaviour:
   - {fileID: 117859577}
   - {fileID: 424003312}
   - {fileID: 937083714}
+  permanentStones: {fileID: 61242833}
 --- !u!4 &1757437064
 Transform:
   m_ObjectHideFlags: 0

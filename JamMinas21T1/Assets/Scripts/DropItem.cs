@@ -6,8 +6,11 @@ public class DropItem : MonoBehaviour
 {
 
     public int oreType;
+
+    public Sprite originalStone;
+
     public Sprite[] dropItem;
-    bool isBroken = false;
+    public bool isBroken = false;
 
     public AudioSource audio;
 
@@ -31,6 +34,11 @@ public class DropItem : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void ResetSprite()
+    {
+        this.GetComponent<SpriteRenderer>().sprite = originalStone;
     }
 
     void ChooseOreType()
@@ -75,7 +83,7 @@ public class DropItem : MonoBehaviour
                 if (!inventory.inventoryFull)
                 {
                     inventory.ReceiveObject(dropItem[(int)oreType]);
-                    Destroy(this.gameObject);
+                    this.gameObject.SetActive(false);
                     playerManager.isHitingOre = false;
                 }
                 else

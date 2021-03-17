@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] randomGenerators;
 
+    public GameObject permanentStones;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +43,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void RestartPermanentStones()
+    {
+        foreach (Transform child in permanentStones.transform)
+        {
+            if (!child.gameObject.activeSelf && child.gameObject.name != "TutorialStone")
+            {
+                child.gameObject.SetActive(true);
+                var dropItem = child.gameObject.GetComponent<DropItem>();
+                dropItem.isBroken = false;
+                dropItem.ResetSprite();
+            }
+        }
+    }
 
     public void ChangeMovementButton(bool isWASD)
     {

@@ -87,6 +87,7 @@ public class Goal : MonoBehaviour
         
 
         gameManager.RestartStones(randomStones);
+        gameManager.RestartPermanentStones();
     }
 
 }
