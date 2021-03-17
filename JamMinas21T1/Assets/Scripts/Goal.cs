@@ -67,6 +67,12 @@ public class Goal : MonoBehaviour
 
         var aux = enemyGold * 1.5f;
         enemyGold = (int)aux;
+
+        if (enemyGold >= 150)
+        {
+            extraTime = 0;
+        }
+
         enemyGoldText.text = enemyGold.ToString() + " g";
 
         contdown.startingTime += extraTime;

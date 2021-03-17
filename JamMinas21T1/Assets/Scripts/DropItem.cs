@@ -12,12 +12,17 @@ public class DropItem : MonoBehaviour
     public AudioSource audio;
 
     public InventoryManager inventory = null;
+    public GameObject inventoryFullHUD;
     // Start is called before the first frame update
     void Start()
     {
         if (inventory == null)
         {
             inventory = GameObject.Find("Inventory").GetComponent<InventoryManager>();
+        }
+        if (inventoryFullHUD == null)
+        {
+            inventoryFullHUD = GameObject.FindGameObjectsWithTag("InventoryFull")[0];
         }
         ChooseOreType();
     }
@@ -73,8 +78,20 @@ public class DropItem : MonoBehaviour
                     Destroy(this.gameObject);
                     playerManager.isHitingOre = false;
                 }
+                else
+                {
+                    var inventoryFullPanel = inventoryFullHUD.transform.GetChild(0);
+                    inventoryFullPanel.gameObject.SetActive(true);
+                    StartCoroutine(CloseInventoryFullHUD(inventoryFullPanel.gameObject));
+                }
             }
         }
+    }
+
+    IEnumerator CloseInventoryFullHUD(GameObject inventoryFullPanel)
+    {
+        yield return new WaitForSeconds(2);
+        inventoryFullPanel.SetActive(false);
     }
 
     IEnumerator ForceClickFalse(PlayerManager playerManager)

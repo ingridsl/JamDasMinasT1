@@ -6,6 +6,7 @@ TagManager:
   tags:
   - RandomGenerator
   - Goal
+  - InventoryFull
   layers:
   - Default
   - TransparentFX
