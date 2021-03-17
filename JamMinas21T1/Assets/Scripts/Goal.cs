@@ -72,7 +72,7 @@ public class Goal : MonoBehaviour
         {
             extraTime = 0;
         }
-        else if(enemyGold >= 200 && contdown.startingTime >= 60)
+        else if(enemyGold >= 200 && contdown.startingTime >= 100)
         {
             extraTime = -10;
         }
