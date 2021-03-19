@@ -7,7 +7,7 @@ using UnityEngine;
  */
 public class ConversartionPlayer : MonoBehaviour
 {
-
+    public GameObject exclamacao;
     bool isInside = false;
     bool started = false;
     //Expõe um campo para conectar o Script Tester e usar suas funções/atributos
@@ -19,6 +19,7 @@ public class ConversartionPlayer : MonoBehaviour
         {
             _tester.StartConvo();
             started = true;
+            Destroy(exclamacao);
         }
     }
 
