@@ -7,9 +7,21 @@ using UnityEngine;
  */
 public class ConversartionPlayer : MonoBehaviour
 {
+    public GameObject exclamacao;
+    bool isInside = false;
+    bool started = false;
     //Expõe um campo para conectar o Script Tester e usar suas funções/atributos
     [SerializeField] Tester _tester;
 
+    void Update()
+    {
+        if (isInside && Input.GetMouseButtonDown(0) && !started)
+        {
+            _tester.StartConvo();
+            started = true;
+            Destroy(exclamacao);
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -19,8 +31,20 @@ public class ConversartionPlayer : MonoBehaviour
         var conversartion = GetComponent<ConversartionPlayer>();
         if (other.gameObject.CompareTag("Player"))
         {
-            _tester.StartConvo();
-            Destroy(conversartion);
+            isInside = true;
+            // _tester.StartConvo();
+            //Destroy(conversartion);
         }
     }
+
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            isInside = false;
+            started = false;
+        }
+    }
+
 }
