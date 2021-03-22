@@ -9,14 +9,22 @@ public class PlayerManager : MonoBehaviour
     public float moveSpeed = 1f;
     public GameManager gameManager = null;
 
-    public bool isHitingOre = false;
-    public bool isMining = false;
+    [SerializeField] public bool isHitingOre = false;
+    [SerializeField] public bool isMining = false;
 
-    public float testmousex = 0;
-    public float testmousey = 0;
+    float testmousex = 0;
+    float testmousey = 0;
 
     public bool canMove = true;
     bool click = false;
+
+    public GameObject playerTrigerLeft;
+    public GameObject playerTrigerRight;
+    public GameObject playerTrigerUp;
+    public GameObject playerTrigerDown;
+
+
+    public AudioSource hitAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -48,11 +56,42 @@ public class PlayerManager : MonoBehaviour
         if (Input.GetKey(gameManager.left) || Input.GetKey(gameManager.right))
         {
             moveInput.x = Input.GetAxis("Horizontal");
+
+            playerTrigerLeft.SetActive(false);
+            playerTrigerRight.SetActive(false);
+            playerTrigerUp.SetActive(false);
+            playerTrigerDown.SetActive(false);
+
+            if (Input.GetKey(gameManager.left))
+            {
+                playerTrigerLeft.SetActive(true);
+            }
+            else
+            {
+                playerTrigerRight.SetActive(true);
+
+            }        
         }
 
         if (Input.GetKey(gameManager.up) || Input.GetKey(gameManager.down))
         {
             moveInput.y = Input.GetAxis("Vertical");
+
+            playerTrigerUp.SetActive(false);
+            playerTrigerDown.SetActive(false);
+            playerTrigerLeft.SetActive(false);
+            playerTrigerRight.SetActive(false);
+
+            if (Input.GetKey(gameManager.up))
+            {
+                playerTrigerUp.SetActive(true);
+            }
+            else
+            {
+                playerTrigerDown.SetActive(true);
+
+            }
+
         }
 
         animator.SetFloat("Horizontal", moveInput.x);
@@ -70,6 +109,7 @@ public class PlayerManager : MonoBehaviour
         animator.SetBool("Click", click);
         if (click)
         {
+            hitAudio.Play();
             click = false;
             StartCoroutine(ForceClickFalse(0.7f));
         }
