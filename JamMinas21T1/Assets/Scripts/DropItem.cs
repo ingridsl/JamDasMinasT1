@@ -120,20 +120,20 @@ public class DropItem : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "PlayerTrigger")
         {
             isInside = false;
-            var playerManager = other.transform.GetComponent<PlayerManager>();
+            var playerManager = other.transform.parent.transform.GetComponent<PlayerManager>();
             playerManager.isHitingOre = false;
         }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "PlayerTrigger")
         {
             isInside = true;
-            playerManager = other.transform.GetComponent<PlayerManager>();
+            playerManager = other.transform.parent.transform.GetComponent<PlayerManager>();
             //OnTriggerGeneral(other);
         }
     }

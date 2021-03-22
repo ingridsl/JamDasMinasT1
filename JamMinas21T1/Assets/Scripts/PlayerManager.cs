@@ -18,6 +18,11 @@ public class PlayerManager : MonoBehaviour
     public bool canMove = true;
     bool click = false;
 
+    public GameObject playerTrigerLeft;
+    public GameObject playerTrigerRight;
+    public GameObject playerTrigerUp;
+    public GameObject playerTrigerDown;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,11 +53,42 @@ public class PlayerManager : MonoBehaviour
         if (Input.GetKey(gameManager.left) || Input.GetKey(gameManager.right))
         {
             moveInput.x = Input.GetAxis("Horizontal");
+
+            playerTrigerLeft.SetActive(false);
+            playerTrigerRight.SetActive(false);
+            playerTrigerUp.SetActive(false);
+            playerTrigerDown.SetActive(false);
+
+            if (Input.GetKey(gameManager.left))
+            {
+                playerTrigerLeft.SetActive(true);
+            }
+            else
+            {
+                playerTrigerRight.SetActive(true);
+
+            }        
         }
 
         if (Input.GetKey(gameManager.up) || Input.GetKey(gameManager.down))
         {
             moveInput.y = Input.GetAxis("Vertical");
+
+            playerTrigerUp.SetActive(false);
+            playerTrigerDown.SetActive(false);
+            playerTrigerLeft.SetActive(false);
+            playerTrigerRight.SetActive(false);
+
+            if (Input.GetKey(gameManager.up))
+            {
+                playerTrigerUp.SetActive(true);
+            }
+            else
+            {
+                playerTrigerDown.SetActive(true);
+
+            }
+
         }
 
         animator.SetFloat("Horizontal", moveInput.x);
