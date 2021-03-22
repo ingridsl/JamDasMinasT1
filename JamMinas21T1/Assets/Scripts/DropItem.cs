@@ -12,7 +12,7 @@ public class DropItem : MonoBehaviour
     public Sprite[] dropItem;
     public bool isBroken = false;
 
-    public AudioSource hitAudio;
+   // public AudioSource hitAudio;
 
     public InventoryManager inventory = null;
     public GameObject inventoryFullHUD;
@@ -77,7 +77,7 @@ public class DropItem : MonoBehaviour
                 playerManager.isHitingOre = true;
                 playerManager.ActivateMiningAnim(true);
 
-                hitAudio.Play();
+               // hitAudio.Play();
 
                 this.GetComponent<SpriteRenderer>().sprite = dropItem[(int)oreType];
                 StartCoroutine(ForceClickFalse(playerManager, 0.7f));

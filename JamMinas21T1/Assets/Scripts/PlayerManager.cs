@@ -9,11 +9,11 @@ public class PlayerManager : MonoBehaviour
     public float moveSpeed = 1f;
     public GameManager gameManager = null;
 
-    public bool isHitingOre = false;
-    public bool isMining = false;
+    [SerializeField] public bool isHitingOre = false;
+    [SerializeField] public bool isMining = false;
 
-    public float testmousex = 0;
-    public float testmousey = 0;
+    float testmousex = 0;
+    float testmousey = 0;
 
     public bool canMove = true;
     bool click = false;
@@ -22,6 +22,9 @@ public class PlayerManager : MonoBehaviour
     public GameObject playerTrigerRight;
     public GameObject playerTrigerUp;
     public GameObject playerTrigerDown;
+
+
+    public AudioSource hitAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -106,6 +109,7 @@ public class PlayerManager : MonoBehaviour
         animator.SetBool("Click", click);
         if (click)
         {
+            hitAudio.Play();
             click = false;
             StartCoroutine(ForceClickFalse(0.7f));
         }
