@@ -4754,13 +4754,12 @@ MonoBehaviour:
   gameManager: {fileID: 1757437063}
   isHitingOre: 0
   isMining: 0
-  testmousex: 0
-  testmousey: 0
   canMove: 1
   playerTrigerLeft: {fileID: 637426056}
   playerTrigerRight: {fileID: 540305390}
   playerTrigerUp: {fileID: 1739465951}
   playerTrigerDown: {fileID: 1957611031}
+  hitAudio: {fileID: 856130808}
 --- !u!212 &856130804
 SpriteRenderer:
   m_ObjectHideFlags: 0
