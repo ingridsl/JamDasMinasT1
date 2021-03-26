@@ -92,6 +92,7 @@ public class DropItem : MonoBehaviour
                     //playerManager.isHitingOre = false;
 
                     //playerManager.ActivateMiningAnim(false);
+                    isInside = false;
                     this.gameObject.SetActive(false);
                 }
                 else
@@ -122,11 +123,18 @@ public class DropItem : MonoBehaviour
     {
         if (other.tag == "PlayerTrigger")
         {
-            isInside = false;
+            StartCoroutine(ExitCountDown());
             var playerManager = other.transform.parent.transform.GetComponent<PlayerManager>();
             playerManager.isHitingOre = false;
         }
     }
+
+    IEnumerator ExitCountDown()
+    {
+        yield return new WaitForSeconds(0.2f);
+        isInside = false;
+    }
+
 
     void OnTriggerEnter2D(Collider2D other)
     {
